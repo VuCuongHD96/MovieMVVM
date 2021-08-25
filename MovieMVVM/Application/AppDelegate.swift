@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func toMain() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as?
+        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "TabbarViewController") as?
                 TabbarViewController else {
             return
         }
