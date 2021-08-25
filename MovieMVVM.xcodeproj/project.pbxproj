@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8458A85F26D6793E0081BED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458A85E26D6793E0081BED2 /* AppDelegate.swift */; };
-		8458A86126D6793E0081BED2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458A86026D6793E0081BED2 /* SceneDelegate.swift */; };
 		8458A86326D6793E0081BED2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458A86226D6793E0081BED2 /* ViewController.swift */; };
 		8458A86626D6793E0081BED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8458A86426D6793E0081BED2 /* Main.storyboard */; };
 		8458A86826D6793F0081BED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8458A86726D6793F0081BED2 /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		8458A85B26D6793E0081BED2 /* MovieMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8458A85E26D6793E0081BED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8458A86026D6793E0081BED2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8458A86226D6793E0081BED2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8458A86526D6793E0081BED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8458A86726D6793F0081BED2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +54,54 @@
 		8458A85D26D6793E0081BED2 /* MovieMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				8458A85E26D6793E0081BED2 /* AppDelegate.swift */,
-				8458A86026D6793E0081BED2 /* SceneDelegate.swift */,
-				8458A86226D6793E0081BED2 /* ViewController.swift */,
-				8458A86426D6793E0081BED2 /* Main.storyboard */,
-				8458A86726D6793F0081BED2 /* Assets.xcassets */,
-				8458A86926D6793F0081BED2 /* LaunchScreen.storyboard */,
-				8458A86C26D6793F0081BED2 /* Info.plist */,
+				8458A87C26D682820081BED2 /* Support */,
+				8458A87A26D682370081BED2 /* Resource */,
+				8458A87826D682060081BED2 /* Scenes */,
+				8458A87726D681EA0081BED2 /* Application */,
 			);
 			path = MovieMVVM;
+			sourceTree = "<group>";
+		};
+		8458A87726D681EA0081BED2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8458A85E26D6793E0081BED2 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		8458A87826D682060081BED2 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8458A87926D682290081BED2 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8458A87926D682290081BED2 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8458A86226D6793E0081BED2 /* ViewController.swift */,
+				8458A86426D6793E0081BED2 /* Main.storyboard */,
+				8458A86926D6793F0081BED2 /* LaunchScreen.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8458A87A26D682370081BED2 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				8458A86726D6793F0081BED2 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		8458A87C26D682820081BED2 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8458A86C26D6793F0081BED2 /* Info.plist */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +176,6 @@
 			files = (
 				8458A86326D6793E0081BED2 /* ViewController.swift in Sources */,
 				8458A85F26D6793E0081BED2 /* AppDelegate.swift in Sources */,
-				8458A86126D6793E0081BED2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +252,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +307,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -287,7 +323,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MovieMVVM/Info.plist;
+				INFOPLIST_FILE = MovieMVVM/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +341,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = MovieMVVM/Info.plist;
+				INFOPLIST_FILE = MovieMVVM/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
