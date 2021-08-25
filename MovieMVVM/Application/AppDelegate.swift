@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func toMain() {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         guard let viewController = storyBoard.instantiateViewController(withIdentifier: "ViewController") as?
-                ViewController else {
+                TabbarViewController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: viewController)
