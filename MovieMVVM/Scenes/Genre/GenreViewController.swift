@@ -22,6 +22,12 @@ final class GenreViewController: UIViewController {
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupData()
+    }
+    
+    // MARK: - Data
+    private func setupData() {
+        viewModel.showData()
     }
 
     // MARK: - Bind Data
