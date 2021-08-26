@@ -8,6 +8,7 @@
 import UIKit
 
 struct StoryBoard {
+    static let main = UIStoryboard(name: "Main", bundle: nil)
     static let home = UIStoryboard(name: "Home", bundle: nil)
     static let genre = UIStoryboard(name: "Genre", bundle: nil)
     static let favorite = UIStoryboard(name: "Favorite", bundle: nil)
