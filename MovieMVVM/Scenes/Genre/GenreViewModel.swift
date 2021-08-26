@@ -14,6 +14,9 @@ protocol GenreViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener? { get set }
+    
+    // MARK: - Data
+    func showData()
 }
 
 final class GenreViewModel: GenreViewModelType {
@@ -31,6 +34,6 @@ final class GenreViewModel: GenreViewModelType {
     
     // MARK: - Data
     func showData() {
-        
+        useCase.getGenreList()
     }
 }

@@ -8,6 +8,7 @@ opt_in_rules: # các rule được thêm vào
   - comma
 excluded: # đường dẫn bỏ qua việc kiểm tra
   - Pods
+  - MovieMVVM\Platform\API\Response\HTTPStatusCode.swift
 
 # hiển thị warning khi sử dụng force casting
 force_cast: warning
@@ -19,5 +20,8 @@ function_body_length:
   warning: 50
   error: 60
 line_length: 120
+
+identifier_name:
+  min_length: 2
 
 reporter: "xcode"

@@ -8,9 +8,22 @@
 import Foundation
 
 protocol GenreUseCaseType {
-    
+    func getGenreList()
 }
 
-struct GenreUseCase: GenreUseCaseType {
+final class GenreUseCase: GenreUseCaseType {
     
+    private let genreRepository = GenreRepository(api: APIService.share)
+
+    func getGenreList() {
+        genreRepository.getGenreList { result in
+            switch result {
+            case .success(let genreResponse):
+                guard let results = genreResponse?.genres else { return }
+                print(results)
+            case .failure(let error):
+                print(error as Any)
+            }
+        }
+    }
 }
