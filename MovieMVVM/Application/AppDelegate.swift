@@ -14,21 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        toMain()
+        toTabbar()
         return true
     }
     
-    private func toMain() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyBoard.instantiateViewController(withIdentifier: "TabbarViewController") as?
-                TabbarViewController else {
-            return
-        }
-        let navigationController = UINavigationController(rootViewController: viewController)
+    private func toTabbar() {
         guard let window = window else {
             return
         }
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+        let navigator = AppNavigator(window: window)
+        let appViewModel = AppViewModel(navigator: navigator)
+        appViewModel.toTabbar()
     }
 }
