@@ -14,6 +14,7 @@ protocol GenreViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener? { get set }
+    var genreDataSourceDelegate: GenreDataSourceDelegate! { get }
     
     // MARK: - Data
     func showData()
@@ -26,6 +27,11 @@ final class GenreViewModel: GenreViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener?
+    var genreDataSourceDelegate: GenreDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
     
     init(navigator: GenreNavigatorType, useCase: GenreUseCaseType) {
         self.navigator = navigator
@@ -34,6 +40,6 @@ final class GenreViewModel: GenreViewModelType {
     
     // MARK: - Data
     func showData() {
-        useCase.getGenreList()
+        genreDataSourceDelegate = GenreDataSourceDelegate()
     }
 }

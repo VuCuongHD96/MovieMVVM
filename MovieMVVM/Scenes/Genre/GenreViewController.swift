@@ -7,9 +7,13 @@
 
 import UIKit
 import Reusable
+import Then
 
 final class GenreViewController: UIViewController {
 
+    // MARK: - Outlet
+    @IBOutlet private weak var tableView: UITableView!
+    
     // MARK: - Property
     var viewModel: GenreViewModelType! {
         didSet {
@@ -32,7 +36,7 @@ final class GenreViewController: UIViewController {
 
     // MARK: - Bind Data
     private func bindViewModel() {
-        
+        tableView.dataSource = viewModel.genreDataSourceDelegate
     }
 }
 
