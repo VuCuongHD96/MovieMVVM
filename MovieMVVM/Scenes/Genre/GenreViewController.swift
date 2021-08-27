@@ -27,16 +27,26 @@ final class GenreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupData()
+        setupView()
     }
     
     // MARK: - Data
     private func setupData() {
         viewModel.showData()
     }
+    
+    private func setupView() {
+        tableView.do {
+            $0.separatorStyle = .none
+            $0.register(cellType: GenreImageCell.self)
+        }
+    }
 
     // MARK: - Bind Data
     private func bindViewModel() {
         tableView.dataSource = viewModel.genreDataSourceDelegate
+        tableView.delegate = viewModel.genreDataSourceDelegate
+        tableView.reloadData()
     }
 }
 
