@@ -18,6 +18,7 @@ target 'MovieMVVM' do
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'Reusable'
   pod 'Then'
+  pod "Pastel"
 
   # Data Base
   pod 'RealmSwift', '~> 5.0.0'
