@@ -18,6 +18,9 @@ protocol GenreViewModelType {
     
     // MARK: - Data
     func showData()
+    
+    // MARK: - Action
+    var searchDidTap: Void { get set }
 }
 
 final class GenreViewModel: GenreViewModelType {
@@ -48,5 +51,16 @@ final class GenreViewModel: GenreViewModelType {
     
     private func setupData(genreArray: [Genre]) {
         genreDataSourceDelegate = GenreDataSourceDelegate(genreArray: genreArray)
+        genreDataSourceDelegate.cellDidTap = { [weak self] in
+            guard let self = self else { return }
+            self.navigator.toMovieByGenre()
+        }
+    }
+    
+    // MARK: - Action
+    var searchDidTap: Void {
+        didSet {
+            navigator.toSearch()
+        }
     }
 }

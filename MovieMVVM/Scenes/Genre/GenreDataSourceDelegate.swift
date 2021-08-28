@@ -13,12 +13,28 @@ final class GenreDataSourceDelegate: NSObject {
     struct Constant {
         static let cellHeight: CGFloat = 250
     }
+    typealias VoidHandler = () -> Void
     
     // MARK: - Property
     var genreArray = [Genre]()
+    var cellDidTap: VoidHandler?
     
     init(genreArray: [Genre]) {
         self.genreArray = genreArray
+    }
+    
+    // MARK: - View
+    private func cellStartAnimation(cell: UITableViewCell) {
+        UIView.animate(withDuration: 0.1) {
+            cell.transform = .init(scaleX: 0.9, y: 0.9)
+        } completion: { _ in
+            UIView.animate(withDuration: 0.1) {
+                cell.transform = .identity
+            } completion: { [weak self] _ in
+                guard let self = self else { return }
+                self.cellDidTap?()
+            }
+        }
     }
 }
 
@@ -40,5 +56,12 @@ extension GenreDataSourceDelegate: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? GenreImageCell else {
+            return
+        }
+        cellStartAnimation(cell: cell)
     }
 }
