@@ -8,19 +8,19 @@
 import Foundation
 
 protocol GenreUseCaseType {
-    func getGenreList()
+    func getGenreList(completion: @escaping ([Genre]) -> Void)
 }
 
 final class GenreUseCase: GenreUseCaseType {
     
     private let genreRepository = GenreRepository(api: APIService.share)
 
-    func getGenreList() {
+    func getGenreList(completion: @escaping ([Genre]) -> Void) {
         genreRepository.getGenreList { result in
             switch result {
             case .success(let genreResponse):
                 guard let results = genreResponse?.genres else { return }
-                print(results)
+                completion(results)
             case .failure(let error):
                 print(error as Any)
             }

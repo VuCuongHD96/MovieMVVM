@@ -40,6 +40,13 @@ final class GenreViewModel: GenreViewModelType {
     
     // MARK: - Data
     func showData() {
-        genreDataSourceDelegate = GenreDataSourceDelegate()
+        genreDataSourceDelegate = GenreDataSourceDelegate(genreArray: Array(repeating: Genre(), count: 5))
+        useCase.getGenreList { genreArray in
+            self.setupData(genreArray: genreArray)
+        }
+    }
+    
+    private func setupData(genreArray: [Genre]) {
+        genreDataSourceDelegate = GenreDataSourceDelegate(genreArray: genreArray)
     }
 }

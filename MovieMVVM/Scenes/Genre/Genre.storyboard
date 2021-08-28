@@ -45,7 +45,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Rlu-Hq-oIa">
-                                <rect key="frame" x="0.0" y="70" width="414" height="666"/>
+                                <rect key="frame" x="5" y="70" width="404" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
@@ -56,9 +56,9 @@
                             <constraint firstItem="Sj1-W0-Ger" firstAttribute="trailing" secondItem="gX0-1r-w7n" secondAttribute="trailing" id="7Ji-0y-0zm"/>
                             <constraint firstItem="Sj1-W0-Ger" firstAttribute="bottom" secondItem="Rlu-Hq-oIa" secondAttribute="bottom" id="Bah-6m-Dch"/>
                             <constraint firstItem="Rlu-Hq-oIa" firstAttribute="top" secondItem="gX0-1r-w7n" secondAttribute="bottom" id="POk-4t-MTO"/>
-                            <constraint firstItem="Rlu-Hq-oIa" firstAttribute="leading" secondItem="Sj1-W0-Ger" secondAttribute="leading" id="eaW-ji-eDn"/>
+                            <constraint firstItem="Rlu-Hq-oIa" firstAttribute="leading" secondItem="Sj1-W0-Ger" secondAttribute="leading" constant="5" id="eaW-ji-eDn"/>
                             <constraint firstItem="gX0-1r-w7n" firstAttribute="top" secondItem="egP-Z6-Gqs" secondAttribute="top" id="gYB-O8-Qqp"/>
-                            <constraint firstItem="Sj1-W0-Ger" firstAttribute="trailing" secondItem="Rlu-Hq-oIa" secondAttribute="trailing" id="yd8-YZ-L2f"/>
+                            <constraint firstItem="Sj1-W0-Ger" firstAttribute="trailing" secondItem="Rlu-Hq-oIa" secondAttribute="trailing" constant="5" id="yd8-YZ-L2f"/>
                         </constraints>
                     </view>
                     <connections>
