@@ -12,4 +12,7 @@ struct StoryBoard {
     static let home = UIStoryboard(name: "Home", bundle: nil)
     static let genre = UIStoryboard(name: "Genre", bundle: nil)
     static let favorite = UIStoryboard(name: "Favorite", bundle: nil)
+    static let movieDetail = UIStoryboard(name: "MovieDetail", bundle: nil)
+    static let movieByGenre = UIStoryboard(name: "MovieByGenre", bundle: nil)
+    static let search = UIStoryboard(name: "Search", bundle: nil)
 }

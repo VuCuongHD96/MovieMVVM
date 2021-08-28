@@ -48,6 +48,11 @@ final class GenreViewController: UIViewController {
         tableView.delegate = viewModel.genreDataSourceDelegate
         tableView.reloadData()
     }
+    
+    // MARK: - Action
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.searchDidTap = Void()
+    }
 }
 
 extension GenreViewController: StoryboardSceneBased {
