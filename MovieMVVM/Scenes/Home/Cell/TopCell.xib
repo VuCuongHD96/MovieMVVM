@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TopCell" customModule="MovieMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-PP-UPQ">
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-1U-qz8">
+                                <rect key="frame" x="0.0" y="5" width="200" height="272"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c5C-zU-qcc">
+                                <rect key="frame" x="5" y="210.5" width="190" height="61.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6z-kr-6Sb">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd7-zu-nkZ">
+                                        <rect key="frame" x="0.0" y="20.5" width="190" height="41"/>
+                                        <string key="text">The Man 
+in the High Castle </string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W9b-1U-qz8" firstAttribute="top" secondItem="IVw-PP-UPQ" secondAttribute="top" constant="5" id="9Nk-xk-5fF"/>
+                            <constraint firstAttribute="bottom" secondItem="W9b-1U-qz8" secondAttribute="bottom" constant="5" id="A6G-zT-0Qn"/>
+                            <constraint firstItem="W9b-1U-qz8" firstAttribute="leading" secondItem="IVw-PP-UPQ" secondAttribute="leading" id="Zvr-zE-Gcz"/>
+                            <constraint firstAttribute="trailing" secondItem="W9b-1U-qz8" secondAttribute="trailing" id="f36-ok-XUP"/>
+                            <constraint firstItem="c5C-zU-qcc" firstAttribute="leading" secondItem="IVw-PP-UPQ" secondAttribute="leading" constant="5" id="o0G-Jg-ftz"/>
+                            <constraint firstItem="c5C-zU-qcc" firstAttribute="bottom" secondItem="W9b-1U-qz8" secondAttribute="bottom" constant="-5" id="p6u-gF-mkE"/>
+                            <constraint firstAttribute="trailing" secondItem="c5C-zU-qcc" secondAttribute="trailing" constant="5" id="srf-QN-4JF"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IVw-PP-UPQ" secondAttribute="trailing" id="QE3-by-YZv"/>
+                <constraint firstItem="IVw-PP-UPQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="V1L-ng-uUI"/>
+                <constraint firstItem="IVw-PP-UPQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="t1Q-ul-2Hw"/>
+                <constraint firstAttribute="bottom" secondItem="IVw-PP-UPQ" secondAttribute="bottom" id="uIa-PJ-ZkD"/>
+            </constraints>
+            <size key="customSize" width="200" height="282"/>
+            <point key="canvasLocation" x="249.27536231884059" y="178.125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="movie" width="140" height="210"/>
+    </resources>
+</document>
