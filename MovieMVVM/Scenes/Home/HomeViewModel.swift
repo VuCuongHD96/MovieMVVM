@@ -14,6 +14,8 @@ protocol HomeViewModelType {
     
     // MARK: - Property
     var dataDidChange: Listener? { get }
+    var nowMovieDataSourceDelegate: NowMovieDataSourceDelegate! { get }
+    var topMovieDataSourceDelegate: TopMovieDataSourceDelegate! { get }
 }
 
 final class HomeViewModel: HomeViewModelType {
@@ -21,7 +23,18 @@ final class HomeViewModel: HomeViewModelType {
     let navigator: HomeNavigatorType
     let useCase: HomeUseCaseType
     
+    // MARK: - Property
     var dataDidChange: Listener?
+    var nowMovieDataSourceDelegate: NowMovieDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
+    var topMovieDataSourceDelegate: TopMovieDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
     
     init(navigator: HomeNavigatorType, useCase: HomeUseCaseType) {
         self.navigator = navigator
@@ -30,6 +43,7 @@ final class HomeViewModel: HomeViewModelType {
     
     // MARK: - Data
     func showData() {
-        
+        nowMovieDataSourceDelegate = NowMovieDataSourceDelegate()
+        topMovieDataSourceDelegate = TopMovieDataSourceDelegate()
     }
 }
