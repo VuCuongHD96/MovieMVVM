@@ -43,7 +43,7 @@ final class GenreViewModel: GenreViewModelType {
     
     // MARK: - Data
     func showData() {
-        genreDataSourceDelegate = GenreDataSourceDelegate(genreArray: Array(repeating: Genre(), count: 5))
+        genreDataSourceDelegate = GenreDataSourceDelegate()
         useCase.getGenreList { genreArray in
             self.setupData(genreArray: genreArray)
         }
