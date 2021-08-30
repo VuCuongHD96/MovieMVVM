@@ -23,6 +23,11 @@ final class GenreDataSourceDelegate: NSObject {
         self.genreArray = genreArray
     }
     
+    convenience override init() {
+        let genreArray = Array(repeating: Genre(), count: 5)
+        self.init(genreArray: genreArray)
+    }
+    
     // MARK: - View
     private func cellStartAnimation(cell: UITableViewCell) {
         UIView.animate(withDuration: 0.1) {
