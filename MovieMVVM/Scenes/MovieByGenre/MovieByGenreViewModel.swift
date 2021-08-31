@@ -22,6 +22,7 @@ protocol MovieByGenreViewModelType {
     
     // MARK: - Action
     var searchDidTap: Void { get set }
+    var backDidTap: Void { get set }
 }
 
 final class MovieByGenreViewModel: MovieByGenreViewModelType {
@@ -51,14 +52,32 @@ final class MovieByGenreViewModel: MovieByGenreViewModelType {
     
     // MARK: - Data
     func showData() {
+        genreName = genre.name.uppercased()
         movieByGenreDataSourceDelegate = MovieByGenreDataSourceDelegate()
         useCase.getMovieList(by: genre) { [weak self] movieArray in
             guard let self = self else { return }
             self.movieByGenreDataSourceDelegate = MovieByGenreDataSourceDelegate(movieArray: movieArray)
+            self.setupMovieAction()
         }
-        genreName = genre.name.uppercased()
+    }
+    
+    private func setupMovieAction() {
+        movieByGenreDataSourceDelegate.movieDidChoise = { [weak self] movie in
+            guard let self = self else { return }
+            self.navigator.toMovieDetail(with: movie)
+        }
     }
     
     // MARK: - Action
-    var searchDidTap: Void
+    var searchDidTap: Void {
+        didSet {
+            navigator.toSearch()
+        }
+    }
+    
+    var backDidTap: Void {
+        didSet {
+            navigator.toPrevious()
+        }
+    }
 }

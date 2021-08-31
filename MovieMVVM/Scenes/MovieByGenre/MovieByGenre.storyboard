@@ -33,10 +33,16 @@
                                             <constraint firstAttribute="height" constant="32" id="XwK-Yw-pc1"/>
                                         </constraints>
                                         <state key="normal" image="SearchWhite"/>
+                                        <connections>
+                                            <action selector="searchAction:" destination="GDc-BP-cEN" eventType="touchUpInside" id="vTi-JJ-hAB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvl-8Q-kHm">
                                         <rect key="frame" x="10" y="28" width="32" height="32"/>
                                         <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="GDc-BP-cEN" eventType="touchUpInside" id="qa2-MS-zUn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGreenColor"/>

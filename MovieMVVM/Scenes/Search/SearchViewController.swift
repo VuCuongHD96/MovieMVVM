@@ -10,9 +10,24 @@ import Reusable
 
 final class SearchViewController: UIViewController {
 
+    // MARK: - Property
+    var viewModel: SearchViewModelType! {
+        didSet {
+            viewModel.dataDidChange = { [unowned self] _ in
+                bindViewModel()
+            }
+        }
+    }
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    // MARK: - Bind Data
+    private func bindViewModel() {
+        
     }
 }
 
