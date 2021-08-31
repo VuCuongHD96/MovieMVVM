@@ -15,7 +15,7 @@ final class MovieByGenreViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     
     // MARK: - Property
-    var viewModel: MovieByGenreViewModel! {
+    var viewModel: MovieByGenreViewModelType! {
         didSet {
             viewModel.dataDidChange = { [unowned self] _ in
                 bindViewModel()
