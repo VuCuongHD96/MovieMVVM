@@ -41,6 +41,13 @@ final class MovieByGenreViewController: UIViewController {
     }
     
     // MARK: - Action
+    @IBAction func backAction(_ sender: Any) {
+        viewModel.backDidTap = Void()
+    }
+    
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.searchDidTap = Void()
+    }
 }
 
 extension MovieByGenreViewController: ViewControllerType {

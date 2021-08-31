@@ -14,9 +14,11 @@ final class MovieByGenreDataSourceDelegate: NSObject {
         static let cellHeight: CGFloat = 250
         static let movieArray = Array(repeating: Movie(), count: 3)
     }
+    typealias MovieHandler = (_ movie: Movie) -> Void
     
     // MARK: - Property
     var movieArray = [Movie]()
+    var movieDidChoise: MovieHandler?
     
     init(movieArray: [Movie]) {
         self.movieArray = movieArray
@@ -45,5 +47,11 @@ extension MovieByGenreDataSourceDelegate: UITableViewDataSource {
 extension MovieByGenreDataSourceDelegate: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return Constant.cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let movie = movieArray[row]
+        movieDidChoise?(movie)
     }
 }
