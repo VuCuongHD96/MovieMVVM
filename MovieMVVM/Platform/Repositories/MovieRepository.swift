@@ -1,27 +1,27 @@
 //
-//  GenreRepository.swift
+//  MovieRepository.swift
 //  MovieMVVM
 //
-//  Created by admin on 8/26/21.
+//  Created by admin on 8/30/21.
 //
 
 import Foundation
 
-protocol GenreRepositoryType {
-    func getGenreList(completion: @escaping (BaseResult<GenreResponse>) -> Void)
+protocol MovieRepositoryType {
+    func getMovieList(by genre: Genre, completion: @escaping (BaseResult<MovieResponse>) -> Void)
 }
 
-final class GenreRepository: GenreRepositoryType {
+final class MovieRepository: MovieRepositoryType {
     private var api: APIService!
     
     required init(api: APIService) {
         self.api = api
     }
     
-    func getGenreList(completion: @escaping (BaseResult<GenreResponse>) -> Void) {
+    func getMovieList(by genre: Genre, completion: @escaping (BaseResult<MovieResponse>) -> Void) {
         guard let api = api else { return }
-        let input = GenreRequest()
-        api.request(input: input) { (object: GenreResponse?, error) in
+        let input = MovieRequest(genreID: genre.id)
+        api.request(input: input) { (object: MovieResponse?, error) in
             guard let object = object else {
                 guard let error = error else {
                     return completion(.failure(error: nil))

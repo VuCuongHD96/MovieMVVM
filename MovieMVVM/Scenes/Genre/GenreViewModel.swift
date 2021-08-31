@@ -51,9 +51,9 @@ final class GenreViewModel: GenreViewModelType {
     
     private func setupData(genreArray: [Genre]) {
         genreDataSourceDelegate = GenreDataSourceDelegate(genreArray: genreArray)
-        genreDataSourceDelegate.cellDidTap = { [weak self] in
+        genreDataSourceDelegate.genreDidChoise = { [weak self] genre in
             guard let self = self else { return }
-            self.navigator.toMovieByGenre()
+            self.navigator.toMovie(by: genre)
         }
     }
     

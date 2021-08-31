@@ -12,41 +12,47 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="330" id="KGk-i7-Jjw" customClass="MovieByGenreCell" customModule="MovieMVVM" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="553" height="330"/>
+            <rect key="frame" x="0.0" y="0.0" width="379" height="330"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="553" height="330"/>
+                <rect key="frame" x="0.0" y="0.0" width="379" height="330"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMJ-yC-I2i">
-                        <rect key="frame" x="0.0" y="10" width="553" height="320"/>
+                        <rect key="frame" x="0.0" y="10" width="379" height="320"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="382-p3-JMj">
-                                <rect key="frame" x="0.0" y="64" width="553" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="379" height="256"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3X-St-ssy">
-                                        <rect key="frame" x="164" y="0.0" width="389" height="256"/>
+                                        <rect key="frame" x="172" y="0.0" width="207" height="256"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmX-xy-3Ra">
-                                                <rect key="frame" x="5" y="0.0" width="102" height="18"/>
+                                                <rect key="frame" x="5" y="0.0" width="192" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="Pam-6r-f1K"/>
+                                                    <constraint firstAttribute="height" constant="20" id="Pam-6r-f1K"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDL-v4-o2E">
-                                                <rect key="frame" x="5" y="20" width="71.5" height="15"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Movie date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDL-v4-o2E">
+                                                <rect key="frame" x="5" y="22" width="69.5" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="qRI-V8-Wdx"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.60784313725490191" green="0.63921568627450975" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ih-1w-YDB" userLabel="Line View">
-                                                <rect key="frame" x="0.0" y="40" width="389" height="2"/>
+                                                <rect key="frame" x="0.0" y="42" width="197" height="2"/>
                                                 <color key="backgroundColor" systemColor="systemGray4Color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="NvC-Xd-i2K"/>
@@ -58,30 +64,34 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixz-LV-Gli">
-                                                <rect key="frame" x="5" y="47" width="348" height="82"/>
+                                                <rect key="frame" x="5" y="49" width="186.5" height="147"/>
                                                 <string key="text">Supervillains Harley Quinn, Bloodsport, Peacemaker and a collection of nutty cons at Belle Reve prison join the super-secret, super-shady Task Force X as they are dropped off at the remote, enemy-infused island of Corto Maltese.</string>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                                 <color key="textColor" red="0.60784313725490191" green="0.63921568627450975" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="ixz-LV-Gli" firstAttribute="leading" secondItem="n3X-St-ssy" secondAttribute="leading" constant="5" id="6uH-FX-atg"/>
-                                            <constraint firstAttribute="trailing" secondItem="4ih-1w-YDB" secondAttribute="trailing" id="8ea-Qt-8Ec"/>
                                             <constraint firstItem="ixz-LV-Gli" firstAttribute="width" relation="lessThanOrEqual" secondItem="n3X-St-ssy" secondAttribute="width" multiplier="0.9" id="D0A-ji-Jyv"/>
                                             <constraint firstItem="ixz-LV-Gli" firstAttribute="height" relation="lessThanOrEqual" secondItem="n3X-St-ssy" secondAttribute="height" multiplier="0.7" id="EQU-4A-7mZ"/>
                                             <constraint firstItem="bmX-xy-3Ra" firstAttribute="leading" secondItem="n3X-St-ssy" secondAttribute="leading" constant="5" id="GTY-Yc-Glz"/>
                                             <constraint firstItem="bmX-xy-3Ra" firstAttribute="top" secondItem="n3X-St-ssy" secondAttribute="top" id="GyU-8G-jeo"/>
                                             <constraint firstItem="xDL-v4-o2E" firstAttribute="leading" secondItem="n3X-St-ssy" secondAttribute="leading" constant="5" id="K7Q-3P-tyf"/>
+                                            <constraint firstItem="4ih-1w-YDB" firstAttribute="trailing" secondItem="bmX-xy-3Ra" secondAttribute="trailing" id="Khk-uG-Dpz"/>
                                             <constraint firstItem="xDL-v4-o2E" firstAttribute="top" secondItem="bmX-xy-3Ra" secondAttribute="bottom" constant="2" id="XUC-n6-gEQ"/>
                                             <constraint firstItem="4ih-1w-YDB" firstAttribute="leading" secondItem="n3X-St-ssy" secondAttribute="leading" id="aIG-q3-fbG"/>
+                                            <constraint firstAttribute="trailing" secondItem="bmX-xy-3Ra" secondAttribute="trailing" constant="10" id="hgw-8P-vui"/>
                                             <constraint firstItem="4ih-1w-YDB" firstAttribute="top" secondItem="xDL-v4-o2E" secondAttribute="bottom" constant="5" id="kwY-pb-gsv"/>
                                             <constraint firstItem="ixz-LV-Gli" firstAttribute="top" secondItem="4ih-1w-YDB" secondAttribute="bottom" constant="5" id="zUs-BD-kCq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="n3X-St-ssy" firstAttribute="top" secondItem="382-p3-JMj" secondAttribute="top" id="0mE-EI-9ZR"/>
                                     <constraint firstAttribute="trailing" secondItem="n3X-St-ssy" secondAttribute="trailing" id="nF4-Vd-ght"/>
@@ -89,20 +99,21 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="UJU-YX-VM9">
-                                <rect key="frame" x="7" y="0.0" width="150" height="315"/>
+                                <rect key="frame" x="7" y="0.0" width="143" height="315"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="Wq2-u7-tFU"/>
+                                    <constraint firstAttribute="width" constant="143" id="Wq2-u7-tFU"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="n3X-St-ssy" firstAttribute="leading" secondItem="UJU-YX-VM9" secondAttribute="trailing" constant="7" id="0uf-RV-nx7"/>
+                            <constraint firstItem="n3X-St-ssy" firstAttribute="leading" secondItem="UJU-YX-VM9" secondAttribute="trailing" constant="22" id="0uf-RV-nx7"/>
                             <constraint firstAttribute="bottom" secondItem="UJU-YX-VM9" secondAttribute="bottom" constant="5" id="7z2-eN-j3l"/>
                             <constraint firstAttribute="trailing" secondItem="382-p3-JMj" secondAttribute="trailing" id="CM4-8W-Kot"/>
                             <constraint firstItem="382-p3-JMj" firstAttribute="height" secondItem="rMJ-yC-I2i" secondAttribute="height" multiplier="8/10" id="CMD-3k-lLO"/>
@@ -121,22 +132,19 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="303.62318840579712" y="196.20535714285714"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="ixz-LV-Gli" id="uIi-px-Gjp"/>
+                <outlet property="movieImageView" destination="UJU-YX-VM9" id="X5V-lc-i4G"/>
+                <outlet property="movieName" destination="bmX-xy-3Ra" id="7u0-rQ-hCk"/>
+                <outlet property="releaseDateLabel" destination="xDL-v4-o2E" id="MbQ-ob-piA"/>
+            </connections>
+            <point key="canvasLocation" x="-47.10144927536232" y="179.46428571428569"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="movie" width="140" height="210"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemTealColor">
-            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

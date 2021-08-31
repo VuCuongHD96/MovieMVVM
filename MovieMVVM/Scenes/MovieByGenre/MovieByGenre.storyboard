@@ -54,11 +54,11 @@
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VHh-uJ-j6u">
                                 <rect key="frame" x="0.0" y="70" width="414" height="666"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rkh-Ch-KOa"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="fRb-N1-liW" firstAttribute="top" secondItem="rRZ-n0-OF1" secondAttribute="top" id="FWj-RK-rgc"/>
                             <constraint firstItem="VHh-uJ-j6u" firstAttribute="top" secondItem="fRb-N1-liW" secondAttribute="bottom" id="JNx-mG-uZU"/>
@@ -71,6 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="VHh-uJ-j6u" id="zt8-fx-LO0"/>
+                        <outlet property="titleLabel" destination="wcu-Mh-e4x" id="wUo-t1-XZz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PL8-nu-GVA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,8 +82,8 @@
     <resources>
         <image name="SearchWhite" width="23" height="23"/>
         <image name="back" width="33.333332061767578" height="33.333332061767578"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
