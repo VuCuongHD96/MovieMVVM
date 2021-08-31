@@ -8,5 +8,8 @@
 import Foundation
 
 struct URLs {
-    static let genre = "https://api.themoviedb.org/3/genre/movie/list"
+    private static let baseUrl = "https://api.themoviedb.org/3/"
+    static let genre = baseUrl + "genre/movie/list"
+    static let movieByGenre = baseUrl + "genre/"
+    static let APIImagesOriginalPath = "https://image.tmdb.org/t/p/original"
 }

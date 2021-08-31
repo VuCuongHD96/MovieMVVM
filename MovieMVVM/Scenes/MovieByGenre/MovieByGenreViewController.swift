@@ -12,9 +12,10 @@ final class MovieByGenreViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var titleLabel: UILabel!
     
     // MARK: - Property
-    var viewModel: MovieByGenreViewModel! {
+    var viewModel: MovieByGenreViewModelType! {
         didSet {
             viewModel.dataDidChange = { [unowned self] _ in
                 bindViewModel()
@@ -36,6 +37,7 @@ final class MovieByGenreViewController: UIViewController {
             $0.delegate = viewModel.movieByGenreDataSourceDelegate
             $0.reloadData()
         }
+        titleLabel.text = viewModel.genreName
     }
     
     // MARK: - Action

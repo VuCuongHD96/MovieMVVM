@@ -9,7 +9,7 @@ import UIKit
 
 protocol GenreNavigatorType {
     
-    func toMovieByGenre()
+    func toMovie(by genre: Genre)
     func toSearch()
 }
 
@@ -17,10 +17,10 @@ struct GenreNavigator: GenreNavigatorType {
     
     unowned let navigationController: UINavigationController
     
-    func toMovieByGenre() {
+    func toMovie(by genre: Genre) {
         let navigator = MovieByGenreNavigator(navigationController: navigationController)
         let useCase = MovieByGenreUseCase()
-        let viewModel = MovieByGenreViewModel(navigator: navigator, useCase: useCase)
+        let viewModel = MovieByGenreViewModel(navigator: navigator, useCase: useCase, genre: genre)
         let viewController = MovieByGenreViewController.instantiate()
         viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
