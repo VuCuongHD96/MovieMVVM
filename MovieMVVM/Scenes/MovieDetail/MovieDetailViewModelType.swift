@@ -27,10 +27,12 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
     // MARK: - Property
     let navigator: MovieDetailNavigatorType
     let useCase: MovieDetailUseCaseType
+    let movie: Movie
     
-    init(navigator: MovieDetailNavigatorType, useCase: MovieDetailUseCaseType) {
+    init(navigator: MovieDetailNavigatorType, useCase: MovieDetailUseCaseType, movie: Movie) {
         self.navigator = navigator
         self.useCase = useCase
+        self.movie = movie
     }
     
     var dataDidChange: Listener?

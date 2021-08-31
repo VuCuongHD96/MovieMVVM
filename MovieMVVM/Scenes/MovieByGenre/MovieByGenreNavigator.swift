@@ -31,7 +31,11 @@ struct MovieByGenreNavigator: MovieByGenreNavigatorType {
     }
     
     func toMovieDetail(with movie: Movie) {
+        let navigator = MovieDetailNavigator(navigationController: navigationController)
+        let useCase = MovieDetailUseCase()
+        let viewModel = MovieDetailViewModel(navigator: navigator, useCase: useCase, movie: movie)
         let viewController = MovieDetailViewController.instantiate()
+        viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
     }
 }
