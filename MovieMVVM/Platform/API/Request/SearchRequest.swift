@@ -14,7 +14,6 @@ class SearchRequest: BaseRequest {
             "language": "en-US",
             "query": query
         ]
-//        let url = URLs.search
         super.init(url: URLs.search, requestType: .get, body: body)
     }
 }
