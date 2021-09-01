@@ -27,7 +27,11 @@ struct GenreNavigator: GenreNavigatorType {
     }
     
     func toSearch() {
+        let navigator = SearchNavigator(navigationController: navigationController)
+        let useCase = SearchUseCase()
+        let viewModel = SearchViewModel(navigator: navigator, useCase: useCase)
         let viewController = SearchViewController.instantiate()
+        viewController.viewModel = viewModel
         navigationController.pushViewController(viewController, animated: true)
     }
 }

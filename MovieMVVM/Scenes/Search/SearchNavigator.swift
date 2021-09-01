@@ -8,10 +8,14 @@
 import UIKit
 
 protocol SearchNavigatorType {
-    
+    func toPrevious() 
 }
 
 struct SearchNavigator: SearchNavigatorType {
     
     unowned let navigationController: UINavigationController
+    
+    func toPrevious() {
+        navigationController.popViewController(animated: true)
+    }
 }

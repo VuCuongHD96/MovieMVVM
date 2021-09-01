@@ -10,10 +10,11 @@ import Foundation
 protocol SearchViewModelType {
     
     // MARK: - Define
-    typealias Listener = (MovieByGenreViewModelType) -> Void
+    typealias Listener = (SearchViewModelType) -> Void
     
     // MARK: - Property
     var dataDidChange: Listener? { get set }
+    var searchText: String { get set }
     
     // MARK: - Data
     func showData()
@@ -34,12 +35,26 @@ final class SearchViewModel: SearchViewModelType {
     }
     
     var dataDidChange: Listener?
+    var searchText: String = "" {
+        didSet {
+            searchMovie(by: searchText)
+        }
+    }
     
     // MARK: - Data
     func showData() {
-        
+    }
+    
+    private func searchMovie(by text: String) {
+        self.useCase.searchMovie(by: text) { movieArray in
+            print("------- debug movie array = ", movieArray)
+        }
     }
     
     // MARK: - Action
-    var backDidTap: Void
+    var backDidTap: Void {
+        didSet {        
+            navigator.toPrevious()
+        }
+    }
 }

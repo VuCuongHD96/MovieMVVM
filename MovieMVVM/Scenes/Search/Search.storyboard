@@ -17,26 +17,83 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saerch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lZi-ay-O6o">
-                                <rect key="frame" x="141" y="130" width="54" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl7-Uq-0oc" customClass="NavigationView" customModule="MovieMVVM" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7AL-Wo-wjH">
+                                        <rect key="frame" x="372" y="28" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="BFw-XR-yUI"/>
+                                            <constraint firstAttribute="width" constant="32" id="jiA-BM-ywF"/>
+                                        </constraints>
+                                        <state key="normal" image="close"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HZM-aa-KaF">
+                                        <rect key="frame" x="10" y="28" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="HZM-aa-KaF" secondAttribute="height" multiplier="1:1" id="PKW-hJ-nv2"/>
+                                        </constraints>
+                                        <state key="normal" image="back"/>
+                                        <connections>
+                                            <action selector="backAction:" destination="pq2-dJ-1Gr" eventType="touchUpInside" id="c9F-gs-Nfv"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5N0-tI-UZO" customClass="SearchTextField" customModule="MovieMVVM" customModuleProvider="target">
+                                        <rect key="frame" x="52" y="27" width="310" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="searchTextFieldDidChange:" destination="pq2-dJ-1Gr" eventType="editingChanged" id="K4n-GH-pCr"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKz-Yc-HxA">
+                                        <rect key="frame" x="57.000000000000007" y="33" width="21.333333333333336" height="22"/>
+                                        <state key="normal" image="movie"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="HZM-aa-KaF" secondAttribute="bottom" constant="10" id="FK4-Pk-Ipw"/>
+                                    <constraint firstItem="HZM-aa-KaF" firstAttribute="height" secondItem="7AL-Wo-wjH" secondAttribute="height" id="IZX-ZL-br4"/>
+                                    <constraint firstItem="5N0-tI-UZO" firstAttribute="leading" secondItem="HZM-aa-KaF" secondAttribute="trailing" constant="10" id="N3k-G0-JEN"/>
+                                    <constraint firstAttribute="height" constant="70" id="PCx-KA-8V5"/>
+                                    <constraint firstItem="NKz-Yc-HxA" firstAttribute="centerY" secondItem="5N0-tI-UZO" secondAttribute="centerY" id="a8x-Xw-NsR"/>
+                                    <constraint firstItem="7AL-Wo-wjH" firstAttribute="leading" secondItem="5N0-tI-UZO" secondAttribute="trailing" constant="10" id="cGx-Vw-4Ke"/>
+                                    <constraint firstAttribute="trailing" secondItem="7AL-Wo-wjH" secondAttribute="trailing" constant="10" id="gZd-IC-7M2"/>
+                                    <constraint firstItem="HZM-aa-KaF" firstAttribute="width" secondItem="7AL-Wo-wjH" secondAttribute="width" id="jBM-eh-Mzo"/>
+                                    <constraint firstItem="5N0-tI-UZO" firstAttribute="centerY" secondItem="HZM-aa-KaF" secondAttribute="centerY" id="mfd-im-sB4"/>
+                                    <constraint firstItem="NKz-Yc-HxA" firstAttribute="leading" secondItem="5N0-tI-UZO" secondAttribute="leading" constant="5" id="uyG-QM-KHp"/>
+                                    <constraint firstItem="HZM-aa-KaF" firstAttribute="bottom" secondItem="7AL-Wo-wjH" secondAttribute="bottom" id="vqX-UW-J3d"/>
+                                    <constraint firstItem="HZM-aa-KaF" firstAttribute="leading" secondItem="Zl7-Uq-0oc" secondAttribute="leading" constant="10" id="zAI-C1-J8k"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gar-0y-ELc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gar-0y-ELc" firstAttribute="trailing" secondItem="Zl7-Uq-0oc" secondAttribute="trailing" id="bk1-QS-Ds5"/>
+                            <constraint firstItem="Zl7-Uq-0oc" firstAttribute="top" secondItem="Fh5-UT-Az7" secondAttribute="top" id="k3Q-xw-hs8"/>
+                            <constraint firstItem="Zl7-Uq-0oc" firstAttribute="leading" secondItem="Fh5-UT-Az7" secondAttribute="leading" id="xwi-AQ-ntc"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="5N0-tI-UZO" id="2cy-nG-oMW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="str-2Z-TJf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-365" y="195"/>
+            <point key="canvasLocation" x="-1197" y="228"/>
         </scene>
     </scenes>
     <resources>
+        <image name="back" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="close" width="32" height="32"/>
+        <image name="movie" width="21.333333969116211" height="21.333333969116211"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
