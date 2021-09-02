@@ -21,7 +21,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOi-Pr-lTX">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="235"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-PJ-TcH">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u9a-PJ-TcH">
                                 <rect key="frame" x="0.0" y="5" width="140" height="180"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -50,6 +50,11 @@
                             <constraint firstItem="u9a-PJ-TcH" firstAttribute="leading" secondItem="MOi-Pr-lTX" secondAttribute="leading" id="vAl-dU-kmv"/>
                             <constraint firstItem="u9a-PJ-TcH" firstAttribute="top" secondItem="MOi-Pr-lTX" secondAttribute="top" constant="5" id="ybw-Ru-5Qm"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
             </view>
@@ -66,7 +71,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="movie" width="140" height="210"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

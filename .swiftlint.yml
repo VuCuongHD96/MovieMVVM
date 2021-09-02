@@ -19,7 +19,7 @@ force_try:
 function_body_length:
   warning: 50
   error: 60
-line_length: 120
+line_length: 130
 
 identifier_name:
   min_length: 2

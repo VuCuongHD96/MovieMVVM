@@ -12,6 +12,8 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var noMovieFoundView: UIView!
     
     // MARK: - Property
     var viewModel: SearchViewModelType! {
@@ -31,6 +33,12 @@ final class SearchViewController: UIViewController {
     
     // MARK: - Bind Data
     private func bindViewModel() {
+        collectionView.do {
+            $0.dataSource = viewModel.searchDataSourceDelegate
+            $0.delegate = viewModel.searchDataSourceDelegate
+            $0.reloadData()
+        }
+        noMovieFoundView.isHidden = viewModel.isFoundMovie
     }
     
     // MARK: - Action
@@ -44,6 +52,11 @@ final class SearchViewController: UIViewController {
         }
         viewModel.searchText = searchText
     }
+    
+    @IBAction func clearAction(_ sender: Any) {
+        searchTextField.text = ""
+        viewModel.searchText = ""
+    }
 }
 
 extension SearchViewController: ViewControllerType {
@@ -51,6 +64,9 @@ extension SearchViewController: ViewControllerType {
     // MARK: - View
     func setupView() {
         searchTextField.placeholder = "Search your movie..."
+        collectionView.do {
+            $0.register(cellType: TopCell.self)
+        }
     }
     
     // MARK: - Data
