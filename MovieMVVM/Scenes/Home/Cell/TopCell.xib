@@ -20,12 +20,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IVw-PP-UPQ">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="282"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="movie" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-1U-qz8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W9b-1U-qz8">
                                 <rect key="frame" x="0.0" y="5" width="200" height="272"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <real key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c5C-zU-qcc">
@@ -36,6 +38,9 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cd7-zu-nkZ">
                                         <rect key="frame" x="0.0" y="20.5" width="190" height="41"/>
@@ -44,6 +49,9 @@ in the High Castle </string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -69,10 +77,12 @@ in the High Castle </string>
                 <constraint firstAttribute="bottom" secondItem="IVw-PP-UPQ" secondAttribute="bottom" id="uIa-PJ-ZkD"/>
             </constraints>
             <size key="customSize" width="200" height="282"/>
+            <connections>
+                <outlet property="movieImageView" destination="W9b-1U-qz8" id="1wk-7p-2WN"/>
+                <outlet property="movieNameLabel" destination="Cd7-zu-nkZ" id="i6u-vf-qRr"/>
+                <outlet property="yearLabel" destination="k6z-kr-6Sb" id="eZq-QE-nul"/>
+            </connections>
             <point key="canvasLocation" x="249.27536231884059" y="178.125"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="movie" width="140" height="210"/>
-    </resources>
 </document>

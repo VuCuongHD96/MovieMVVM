@@ -15,6 +15,8 @@ protocol SearchViewModelType {
     // MARK: - Property
     var dataDidChange: Listener? { get set }
     var searchText: String { get set }
+    var searchDataSourceDelegate: SearchDataSourceDelegate! { get }
+    var isFoundMovie: Bool { get }
     
     // MARK: - Data
     func showData()
@@ -40,14 +42,34 @@ final class SearchViewModel: SearchViewModelType {
             searchMovie(by: searchText)
         }
     }
+    var searchDataSourceDelegate: SearchDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
+    var isFoundMovie = false
     
     // MARK: - Data
     func showData() {
     }
     
     private func searchMovie(by text: String) {
-        self.useCase.searchMovie(by: text) { movieArray in
-            print("------- debug movie array = ", movieArray)
+        self.useCase.searchMovie(by: text) { [weak self] movieArray in
+            guard let self = self else { return }
+            self.setupSearchData(by: movieArray)
+        }
+    }
+    
+    private func setupSearchData(by data: [Movie]) {
+        isFoundMovie = !data.isEmpty
+        searchDataSourceDelegate = SearchDataSourceDelegate(movieArray: data)
+        setupSearchAction()
+    }
+    
+    private func setupSearchAction() {
+        searchDataSourceDelegate.movieDidChoise = { [weak self] movie in
+            guard let self = self else { return }
+            self.navigator.toMovieDetail(with: movie)
         }
     }
     
