@@ -14,17 +14,34 @@ final class NowMovieDataSourceDelegate: NSObject {
         static let cellWidth: CGFloat = 140
         static let cellHeight: CGFloat = 260
         static let spacing: CGFloat = 15
+        static let movieArray = Array(repeating: Movie(), count: 8)
+    }
+    typealias MovieHandler = (Movie) -> Void
+    
+    // MARK: - Property
+    var movieArray = [Movie]()
+    var movieDidChoise: MovieHandler?
+    
+    init(movieArray: [Movie]) {
+        self.movieArray = movieArray
+    }
+    
+    convenience override init() {
+        self.init(movieArray: Constant.movieArray)
     }
 }
 
 extension NowMovieDataSourceDelegate: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return movieArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let row = indexPath.row
+        let movie = movieArray[row]
         let cell: NowCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.setContent(data: movie)
         return cell
     }
 }

@@ -12,7 +12,7 @@ protocol MovieByGenreUseCaseType {
 }
 
 final class MovieByGenreUseCase: MovieByGenreUseCaseType {
-
+    
     private let movieRepository = MovieRepository(api: APIService.share)
     
     func getMovieList(by genre: Genre, completion: @escaping ([Movie]) -> Void) {

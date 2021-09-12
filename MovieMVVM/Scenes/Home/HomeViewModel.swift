@@ -43,7 +43,19 @@ final class HomeViewModel: HomeViewModelType {
     
     // MARK: - Data
     func showData() {
-        nowMovieDataSourceDelegate = NowMovieDataSourceDelegate()
-        topMovieDataSourceDelegate = TopMovieDataSourceDelegate()
+        getNowMovieData()
+        getTopMovieData()
+    }
+    
+    private func getNowMovieData() {
+        useCase.getMovieList(by: .nowPlaying) { [unowned self] movieArray in
+            nowMovieDataSourceDelegate = NowMovieDataSourceDelegate(movieArray: movieArray)
+        }
+    }
+    
+    private func getTopMovieData() {
+        useCase.getMovieList(by: .topRated) { [unowned self] movieArray in
+            topMovieDataSourceDelegate = TopMovieDataSourceDelegate(movieArray: movieArray)
+        }
     }
 }
