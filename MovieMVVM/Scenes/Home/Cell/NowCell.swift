@@ -7,7 +7,6 @@
 
 import UIKit
 import Reusable
-//import SDWebImage
 
 final class NowCell: UICollectionViewCell, NibReusable {
 
