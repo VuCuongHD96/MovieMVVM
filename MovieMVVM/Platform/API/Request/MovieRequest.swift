@@ -22,4 +22,12 @@ class MovieRequest: BaseRequest {
         let url = URLs.movieByGenre + "\(genreID)" + "/movies"
         super.init(url: url, requestType: .get, body: body)
     }
+    
+    required init(type: MovieType) {
+        let body: [String: Any] = [
+            "language": "en-US"
+        ]
+        let url = URLs.movie + type.pathUrl
+        super.init(url: url, requestType: .get, body: body)
+    }
 }
