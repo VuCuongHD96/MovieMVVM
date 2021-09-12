@@ -21,6 +21,7 @@ final class TopMovieDataSourceDelegate: NSObject {
     // MARK: - Property
     var movieArray = [Movie]()
     var movieDidChoise: MovieHandler?
+    weak var delegate: HomeDelegate?
     
     init(movieArray: [Movie]) {
         self.movieArray = movieArray
@@ -58,5 +59,14 @@ extension TopMovieDataSourceDelegate: UICollectionViewDelegateFlowLayout {
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return Constant.spacing
+    }
+}
+
+extension TopMovieDataSourceDelegate: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let movie = movieArray[row]
+        delegate?.passMovie(movie)
     }
 }

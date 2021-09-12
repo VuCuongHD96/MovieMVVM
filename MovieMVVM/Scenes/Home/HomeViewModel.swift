@@ -16,6 +16,9 @@ protocol HomeViewModelType {
     var dataDidChange: Listener? { get }
     var nowMovieDataSourceDelegate: NowMovieDataSourceDelegate! { get }
     var topMovieDataSourceDelegate: TopMovieDataSourceDelegate! { get }
+    
+    // MARK: - Action
+    var searchDidTap: Void { get set }
 }
 
 final class HomeViewModel: HomeViewModelType {
@@ -50,12 +53,28 @@ final class HomeViewModel: HomeViewModelType {
     private func getNowMovieData() {
         useCase.getMovieList(by: .nowPlaying) { [unowned self] movieArray in
             nowMovieDataSourceDelegate = NowMovieDataSourceDelegate(movieArray: movieArray)
+            nowMovieDataSourceDelegate.delegate = self
         }
     }
     
     private func getTopMovieData() {
         useCase.getMovieList(by: .topRated) { [unowned self] movieArray in
             topMovieDataSourceDelegate = TopMovieDataSourceDelegate(movieArray: movieArray)
+            topMovieDataSourceDelegate.delegate = self
         }
+    }
+    
+    // MARK: - Action
+    var searchDidTap: Void {
+        didSet {
+            navigator.toSearch()
+        }
+    }
+}
+
+extension HomeViewModel: HomeDelegate {
+    
+    func passMovie(_ movie: Movie) {
+        navigator.toMovieDetail(with: movie)
     }
 }

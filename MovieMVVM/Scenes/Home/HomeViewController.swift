@@ -39,6 +39,11 @@ final class HomeViewController: UIViewController {
         topCollection.delegate = viewModel.topMovieDataSourceDelegate
         topCollection.reloadData()
     }
+    
+    // MARK: - Action
+    @IBAction func searchAction(_ sender: Any) {
+        viewModel.searchDidTap = Void()
+    }
 }
 
 extension HomeViewController: ViewControllerType {
