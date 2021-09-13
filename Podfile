@@ -12,7 +12,7 @@ target 'MovieMVVM' do
   pod 'ObjectMapper'
   
   # View
-  pod 'SkeletonView', '~> 1.4.1'
+  pod 'SkeletonView' 
   pod 'SDWebImage', '~> 5.8.1'
   pod 'SwiftLint'
   pod 'Toast-Swift', '~> 5.0.1'

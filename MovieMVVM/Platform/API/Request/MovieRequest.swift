@@ -8,6 +8,7 @@
 import Foundation
 
 class MovieRequest: BaseRequest {
+    
     required init() {
         let body: [String: Any] = [
             "language": "en-US"
@@ -28,6 +29,14 @@ class MovieRequest: BaseRequest {
             "language": "en-US"
         ]
         let url = URLs.movie + type.pathUrl
+        super.init(url: url, requestType: .get, body: body)
+    }
+    
+    required init(movieID: Int) {
+        let body: [String: Any] = [
+            "language": "en-US"
+        ]
+        let url = URLs.movie + String(movieID)
         super.init(url: url, requestType: .get, body: body)
     }
 }
