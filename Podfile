@@ -19,6 +19,7 @@ target 'MovieMVVM' do
   pod 'Reusable'
   pod 'Then'
   pod "Pastel"
+  pod 'Cosmos', '~> 23.0'
 
   # Data Base
   pod 'RealmSwift', '~> 5.0.0'
