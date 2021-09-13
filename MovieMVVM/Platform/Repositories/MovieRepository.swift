@@ -61,4 +61,18 @@ final class MovieRepository: MovieRepositoryType {
             completion(.success(object))
         }
     }
+    
+    func getMovieDetail(by movie: Movie, completion: @escaping (BaseResult<Movie>) -> Void) {
+        guard let api = api else { return }
+        let input = MovieRequest(movieID: movie.id)
+        api.request(input: input) { (object: Movie?, error) in
+            guard let object = object else {
+                guard let error = error else {
+                    return completion(.failure(error: nil))
+                }
+                return completion(.failure(error: error))
+            }
+            completion(.success(object))
+        }
+    }
 }

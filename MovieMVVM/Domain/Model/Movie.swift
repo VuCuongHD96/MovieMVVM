@@ -11,7 +11,7 @@ class Movie: Mappable {
     
     var adult = false
     var backdropPath = ""
-    var genreIds = [Int]()
+    var genres = [Genre]()
     var id = 0
     var originalLanguage = ""
     var originalTitle = ""
@@ -21,11 +21,21 @@ class Movie: Mappable {
     var releaseDateString = ""
     var title = ""
     var video = false
-    var voteAverage: CFloat = 0
+    var voteAverage: Double = 0
     var voteCount = 0
     var infor: String {
         let dateInput = Date.fromString(releaseDateString)
         return Date.stringFrom(date: dateInput)
+    }
+    var voteStar: Double {
+        return voteAverage / 2
+    }
+    var arrayGenre: String {
+        let combindGenre = genres.reduce("") { (result, genre) -> String in
+            result + genre.name + " "
+        }
+        let commaGenre = combindGenre.replacingOccurrences(of: " ", with: ", ")
+        return String(commaGenre.dropLast(2))
     }
     
     required convenience init?(map: Map) {
@@ -38,7 +48,7 @@ extension Movie {
     func mapping(map: Map) {
         adult <- map["adult"]
         backdropPath <- map["backdrop_path"]
-        genreIds <- map["genre_ids"]
+        genres <- map["genres"]
         id <- map["id"]
         originalLanguage <- map["original_language"]
         originalTitle <- map["original_title"]
