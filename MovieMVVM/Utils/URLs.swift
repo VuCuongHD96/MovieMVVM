@@ -15,4 +15,9 @@ struct URLs {
     static let search = baseUrl + "search/movie"
     static let movie = baseUrl + "movie/"
     static let trailer = baseUrl + "movie/"
+    static let credit = baseUrl + "movie/"
 }
+
+
+//https://api.themoviedb.org/3/movie/550988/credits?
+//api_key=51ffa9a5c2d24014caf3097730b37c9c&language=en-US
