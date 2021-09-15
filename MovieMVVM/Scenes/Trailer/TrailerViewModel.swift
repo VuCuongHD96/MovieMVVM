@@ -45,8 +45,16 @@ final class TrailerViewModel: TrailerViewModelType {
     // MARK: - Data
     func showData() {
         trailerDataSourceDelegate = TrailerDataSourceDelegate()
+        trailerDataSourceDelegate.passTrailer = { [weak self] trailer in
+            guard let self = self else { return }
+            self.navigator.toVideoScreen(with: trailer)
+        }
     }
     
     // MARK: - Action
-    var closeDidTap: Void
+    var closeDidTap: Void {
+        didSet {
+            navigator.dismissView()
+        }
+    }
 }
