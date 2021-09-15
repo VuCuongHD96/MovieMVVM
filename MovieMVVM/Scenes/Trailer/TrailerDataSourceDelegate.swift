@@ -16,9 +16,11 @@ final class TrailerDataSourceDelegate: NSObject {
         static let insets = UIEdgeInsets(top: 5, left: 15, bottom: 5, right: 15)
         static let trailerArray = Array(repeating: Trailer(), count: 5)
     }
+    typealias TrailerHandler = (Trailer) -> Void
     
     // MARK: - Property
     var trailerArray = [Trailer]()
+    var passTrailer: TrailerHandler?
     
     // MARK: - Init
     init(trailerArray: [Trailer]) {
@@ -39,5 +41,14 @@ extension TrailerDataSourceDelegate: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TrailerCell = tableView.dequeueReusableCell(for: indexPath)
         return cell
+    }
+}
+
+extension TrailerDataSourceDelegate: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = indexPath.row
+        let trailer = trailerArray[row]
+        passTrailer?(trailer)
     }
 }

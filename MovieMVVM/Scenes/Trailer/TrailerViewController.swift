@@ -34,6 +34,11 @@ final class TrailerViewController: UIViewController {
     private func bindViewModel() {
         tableView.dataSource = viewModel.trailerDataSourceDelegate
     }
+    
+    // MARK: - Action
+    @IBAction func closeAction(_ sender: Any) {
+        viewModel.closeDidTap = Void()
+    }
 }
 
 extension TrailerViewController: ViewControllerType {

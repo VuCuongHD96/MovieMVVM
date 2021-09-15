@@ -24,13 +24,14 @@ final class GradientButton: UIButton {
     // MARK: - Life Cycle
     override func layoutSubviews() {
         super.layoutSubviews()
-        setupGradientColor()
         setupButtonText()
+        setupGradientColor()
     }
     
     // MARK: - View
     private func setupGradientColor() {
         let pastelView = PastelView(frame: bounds)
+        pastelView.isUserInteractionEnabled = false
         pastelView.startPastelPoint = .left
         pastelView.endPastelPoint = .right
         pastelView.animationDuration = 3.0
