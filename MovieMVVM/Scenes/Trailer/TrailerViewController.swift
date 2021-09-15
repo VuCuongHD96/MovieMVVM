@@ -33,6 +33,8 @@ final class TrailerViewController: UIViewController {
     // MARK: - Bind Data
     private func bindViewModel() {
         tableView.dataSource = viewModel.trailerDataSourceDelegate
+        tableView.delegate = viewModel.trailerDataSourceDelegate
+        tableView.reloadData()
     }
     
     // MARK: - Action

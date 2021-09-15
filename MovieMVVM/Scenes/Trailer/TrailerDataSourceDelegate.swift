@@ -35,11 +35,14 @@ final class TrailerDataSourceDelegate: NSObject {
 extension TrailerDataSourceDelegate: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return trailerArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let row = indexPath.row
+        let trailer = trailerArray[row]
         let cell: TrailerCell = tableView.dequeueReusableCell(for: indexPath)
+        cell.setContent(data: trailer)
         return cell
     }
 }

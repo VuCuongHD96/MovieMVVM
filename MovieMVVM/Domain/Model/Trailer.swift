@@ -17,6 +17,10 @@ class Trailer: Mappable {
     var official = false
     var publishedAt = ""
     var id = ""
+    var infor: String {
+        let dateInput = Date.fromString(publishedAt)
+        return Date.stringFrom(date: dateInput)
+    }
     
     required convenience init?(map: Map) {
         self.init()

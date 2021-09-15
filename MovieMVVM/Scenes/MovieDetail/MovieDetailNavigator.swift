@@ -9,7 +9,7 @@ import UIKit
 
 protocol MovieDetailNavigatorType {
     func toPrevious()
-    func showTrailerScreen()
+    func showTrailerScreen(with movie: Movie)
 }
 
 struct MovieDetailNavigator: MovieDetailNavigatorType {
@@ -20,10 +20,10 @@ struct MovieDetailNavigator: MovieDetailNavigatorType {
         navigationController.popViewController(animated: true)
     }
     
-    func showTrailerScreen() {
+    func showTrailerScreen(with movie: Movie) {
         let navigator = TrailerNavigator(navigationController: navigationController)
         let useCase = TrailerUseCase()
-        let viewModel = TrailerViewModel(navigator: navigator, useCase: useCase)
+        let viewModel = TrailerViewModel(navigator: navigator, useCase: useCase, movie: movie)
         let viewController = TrailerViewController.instantiate()
         viewController.viewModel = viewModel
         viewController.modalPresentationStyle = .overFullScreen

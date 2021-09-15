@@ -28,10 +28,12 @@ final class TrailerViewModel: TrailerViewModelType {
     // MARK: - Property
     let navigator: TrailerNavigatorType
     let useCase: TrailerUseCaseType
+    let movie: Movie
     
-    init(navigator: TrailerNavigatorType, useCase: TrailerUseCaseType) {
+    init(navigator: TrailerNavigatorType, useCase: TrailerUseCaseType, movie: Movie) {
         self.navigator = navigator
         self.useCase = useCase
+        self.movie = movie
     }
     
     var dataDidChange: Listener?
@@ -45,9 +47,10 @@ final class TrailerViewModel: TrailerViewModelType {
     // MARK: - Data
     func showData() {
         trailerDataSourceDelegate = TrailerDataSourceDelegate()
-        trailerDataSourceDelegate.passTrailer = { [weak self] trailer in
+        useCase.getTrailerList(movie) { [weak self] trailerArray in
             guard let self = self else { return }
-            self.navigator.toVideoScreen(with: trailer)
+            self.trailerDataSourceDelegate = TrailerDataSourceDelegate(trailerArray: trailerArray)
+            self.setupActionTrailer()
         }
     }
     
@@ -55,6 +58,13 @@ final class TrailerViewModel: TrailerViewModelType {
     var closeDidTap: Void {
         didSet {
             navigator.dismissView()
+        }
+    }
+    
+    private func setupActionTrailer() {
+        trailerDataSourceDelegate.passTrailer = { [weak self] trailer in
+            guard let self = self else { return }
+            self.navigator.toVideoScreen(with: trailer)
         }
     }
 }
