@@ -41,6 +41,15 @@ final class MovieDetailViewController: UIViewController {
     private func bindViewModel() {
         setupMovieData(viewModel.movieResponse)
     }
+    
+    // MARK: - Action
+    @IBAction func playAction(_ sender: Any) {
+        viewModel.playDidTap = Void()
+    }
+    
+    @IBAction func backAction(_ sender: Any) {
+        viewModel.backDidTap = Void()
+    }
 }
 
 extension MovieDetailViewController: ViewControllerType {
