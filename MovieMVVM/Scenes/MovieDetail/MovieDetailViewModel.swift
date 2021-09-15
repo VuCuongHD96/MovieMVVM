@@ -21,6 +21,7 @@ protocol MovieDetailViewModelType {
     
     // MARK: - Action
     var backDidTap: Void { get set }
+    var playDidTap: Void { get set}
 }
 
 final class MovieDetailViewModel: MovieDetailViewModelType {
@@ -52,5 +53,15 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
     }
     
     // MARK: - Action
-    var backDidTap: Void
+    var backDidTap: Void {
+        didSet {
+            navigator.toPrevious()
+        }
+    }
+    
+    var playDidTap: Void {
+        didSet {
+            navigator.showTrailerScreen()
+        }
+    }
 }
