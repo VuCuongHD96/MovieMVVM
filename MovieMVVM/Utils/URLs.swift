@@ -14,4 +14,5 @@ struct URLs {
     static let APIImagesOriginalPath = "https://image.tmdb.org/t/p/original"
     static let search = baseUrl + "search/movie"
     static let movie = baseUrl + "movie/"
+    static let trailer = baseUrl + "movie/"
 }

@@ -61,7 +61,7 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
     
     var playDidTap: Void {
         didSet {
-            navigator.showTrailerScreen()
+            navigator.showTrailerScreen(with: movieResponse)
         }
     }
 }

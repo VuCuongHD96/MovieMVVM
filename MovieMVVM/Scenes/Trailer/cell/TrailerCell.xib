@@ -18,69 +18,86 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uIk-qD-FH0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="150" id="M3R-4E-PDH"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2qz-ws-Lya">
-                        <rect key="frame" x="15" y="160" width="290" height="138"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DBz-sW-jz2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="321"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Given The Movie | OFFICIAL TRAILER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-ic-OKU">
-                                <rect key="frame" x="0.0" y="0.0" width="290" height="118"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2020-10-27" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-X8-udz">
-                                <rect key="frame" x="0.0" y="118" width="290" height="20"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="252" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="uIk-qD-FH0">
+                                <rect key="frame" x="20" y="0.0" width="280" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="rD8-QZ-WJq"/>
+                                    <constraint firstAttribute="height" constant="150" id="M3R-4E-PDH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2qz-ws-Lya">
+                                <rect key="frame" x="35" y="160" width="250" height="138"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Given The Movie | OFFICIAL TRAILER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTm-ic-OKU">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="120"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="2020-10-27" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QeZ-X8-udz">
+                                        <rect key="frame" x="0.0" y="120" width="250" height="18"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99X-HA-Al8" userLabel="LineView">
+                                <rect key="frame" x="20" y="308" width="280" height="3"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="FUp-EZ-wwu"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
-                    </stackView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99X-HA-Al8" userLabel="LineView">
-                        <rect key="frame" x="30" y="308" width="260" height="3"/>
-                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="3" id="FUp-EZ-wwu"/>
+                            <constraint firstItem="uIk-qD-FH0" firstAttribute="leading" secondItem="DBz-sW-jz2" secondAttribute="leading" constant="20" id="2ZF-du-cYE"/>
+                            <constraint firstItem="99X-HA-Al8" firstAttribute="trailing" secondItem="uIk-qD-FH0" secondAttribute="trailing" id="AYG-qy-aVg"/>
+                            <constraint firstItem="uIk-qD-FH0" firstAttribute="top" secondItem="DBz-sW-jz2" secondAttribute="top" id="KYa-YJ-zEr"/>
+                            <constraint firstItem="99X-HA-Al8" firstAttribute="top" secondItem="2qz-ws-Lya" secondAttribute="bottom" constant="10" id="L4O-L8-mNL"/>
+                            <constraint firstItem="2qz-ws-Lya" firstAttribute="top" secondItem="uIk-qD-FH0" secondAttribute="bottom" constant="10" id="a2P-uM-xRW"/>
+                            <constraint firstItem="2qz-ws-Lya" firstAttribute="leading" secondItem="DBz-sW-jz2" secondAttribute="leading" constant="35" id="dDF-iF-9Th"/>
+                            <constraint firstAttribute="trailing" secondItem="2qz-ws-Lya" secondAttribute="trailing" constant="35" id="dpU-q7-DrR"/>
+                            <constraint firstItem="99X-HA-Al8" firstAttribute="leading" secondItem="uIk-qD-FH0" secondAttribute="leading" id="duO-uC-dMc"/>
+                            <constraint firstAttribute="bottom" secondItem="99X-HA-Al8" secondAttribute="bottom" constant="10" id="jXw-pG-ZHY"/>
+                            <constraint firstAttribute="trailing" secondItem="uIk-qD-FH0" secondAttribute="trailing" constant="20" id="zJq-x9-jbB"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="99X-HA-Al8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="2aX-RL-ACK"/>
-                    <constraint firstItem="uIk-qD-FH0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="N9r-bs-wbp"/>
-                    <constraint firstItem="99X-HA-Al8" firstAttribute="top" secondItem="2qz-ws-Lya" secondAttribute="bottom" constant="10" id="Nag-ig-WTL"/>
-                    <constraint firstAttribute="bottom" secondItem="99X-HA-Al8" secondAttribute="bottom" constant="10" id="WSJ-pl-9ZY"/>
-                    <constraint firstAttribute="trailing" secondItem="99X-HA-Al8" secondAttribute="trailing" constant="30" id="c5P-1T-sdL"/>
-                    <constraint firstItem="2qz-ws-Lya" firstAttribute="top" secondItem="uIk-qD-FH0" secondAttribute="bottom" constant="10" id="gyJ-LX-6c2"/>
-                    <constraint firstAttribute="trailing" secondItem="2qz-ws-Lya" secondAttribute="trailing" constant="15" id="kiO-sj-YA1"/>
-                    <constraint firstAttribute="trailing" secondItem="uIk-qD-FH0" secondAttribute="trailing" id="p4m-m8-1na"/>
-                    <constraint firstItem="2qz-ws-Lya" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="rpC-I0-o8U"/>
-                    <constraint firstItem="uIk-qD-FH0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="uSt-Ow-NKq"/>
+                    <constraint firstItem="DBz-sW-jz2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="BZ3-Wx-mie"/>
+                    <constraint firstItem="DBz-sW-jz2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="L9d-Q2-WXw"/>
+                    <constraint firstAttribute="trailing" secondItem="DBz-sW-jz2" secondAttribute="trailing" id="eRs-Yd-uJ1"/>
+                    <constraint firstAttribute="bottom" secondItem="DBz-sW-jz2" secondAttribute="bottom" id="fzX-ns-95b"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
-            <point key="canvasLocation" x="-94.20289855072464" y="117.52232142857142"/>
+            <connections>
+                <outlet property="nameLabel" destination="kTm-ic-OKU" id="u81-ch-cy1"/>
+                <outlet property="trailerImageView" destination="uIk-qD-FH0" id="VAf-K0-32s"/>
+                <outlet property="yearLabel" destination="QeZ-X8-udz" id="Dw2-K3-2yR"/>
+            </connections>
+            <point key="canvasLocation" x="-487" y="64"/>
         </tableViewCell>
     </objects>
     <resources>
         <image name="BackgroundImage" width="375" height="280"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
