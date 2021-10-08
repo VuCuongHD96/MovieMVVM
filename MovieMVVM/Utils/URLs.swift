@@ -15,4 +15,5 @@ struct URLs {
     static let search = baseUrl + "search/movie"
     static let movie = baseUrl + "movie/"
     static let trailer = baseUrl + "movie/"
+    static let credit = baseUrl + "movie/"
 }

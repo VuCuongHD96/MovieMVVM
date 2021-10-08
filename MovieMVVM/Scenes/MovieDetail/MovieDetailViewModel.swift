@@ -50,6 +50,13 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
             guard let self = self else { return }
             self.movieResponse = movie
         }
+        
+        useCase.getCredit(by: movie) { [weak self] credit in
+            guard let self = self else { return }
+            print("------ debug id = ", credit.id)
+            print("------ debug cast = ", credit.cast)
+            print("------ debug crew = ", credit.crew)
+        }
     }
     
     // MARK: - Action

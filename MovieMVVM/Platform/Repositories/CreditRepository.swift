@@ -1,17 +1,17 @@
 //
-//  TrailerRepository.swift
+//  CreditRepository.swift
 //  MovieMVVM
 //
-//  Created by admin on 9/15/21.
+//  Created by Sun on 08/10/2021.
 //
 
 import Foundation
 
-protocol TrailerRepositoryType {
-    func getTrailerList(by movie: Movie, completion: @escaping (BaseResult<TrailerResponse>) -> Void)
+protocol CreditRepositoryType {
+    func getCredit(by movie: Movie, completion: @escaping (BaseResult<CreditResponse>) -> Void)
 }
 
-final class TrailerRepository: TrailerRepositoryType {
+final class CreditRepository: CreditRepositoryType {
     
     private var api: APIService!
     
@@ -19,10 +19,10 @@ final class TrailerRepository: TrailerRepositoryType {
         self.api = api
     }
     
-    func getTrailerList(by movie: Movie, completion: @escaping (BaseResult<TrailerResponse>) -> Void) {
+    func getCredit(by movie: Movie, completion: @escaping (BaseResult<CreditResponse>) -> Void) {
         guard let api = api else { return }
-        let input = TrailerRequest(movieID: movie.id)
-        api.request(input: input) { (object: TrailerResponse?, error) in
+        let input = CreditRequest(movieID: movie.id)
+        api.request(input: input) { (object: CreditResponse?, error) in
             guard let object = object else {
                 guard let error = error else {
                     return completion(.failure(error: nil))

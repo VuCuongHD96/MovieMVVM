@@ -13,5 +13,4 @@ protocol FavoriteUseCaseType {
 
 struct FavoriteUseCase: FavoriteUseCaseType {
     
-    
 }
