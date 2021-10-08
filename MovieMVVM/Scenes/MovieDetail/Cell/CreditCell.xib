@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CreditCell" customModule="MovieMVVM" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="137" height="233"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="137" height="233"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YJ6-Cv-YDR">
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="233"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-1m-P6o">
+                                <rect key="frame" x="0.0" y="0.0" width="137" height="233"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The Flash" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5v1-Ux-TDF">
+                                <rect key="frame" x="2" y="216.5" width="133" height="14.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="m2L-1m-P6o" firstAttribute="leading" secondItem="YJ6-Cv-YDR" secondAttribute="leading" id="2MY-At-b8K"/>
+                            <constraint firstItem="5v1-Ux-TDF" firstAttribute="leading" secondItem="YJ6-Cv-YDR" secondAttribute="leading" constant="2" id="9bU-jW-tDO"/>
+                            <constraint firstItem="m2L-1m-P6o" firstAttribute="top" secondItem="YJ6-Cv-YDR" secondAttribute="top" id="EQC-oZ-Jhf"/>
+                            <constraint firstAttribute="trailing" secondItem="5v1-Ux-TDF" secondAttribute="trailing" constant="2" id="QWp-93-cWf"/>
+                            <constraint firstAttribute="bottom" secondItem="m2L-1m-P6o" secondAttribute="bottom" id="Ti8-0f-gxF"/>
+                            <constraint firstAttribute="bottom" secondItem="5v1-Ux-TDF" secondAttribute="bottom" constant="2" id="YV7-Ch-tO3"/>
+                            <constraint firstAttribute="trailing" secondItem="m2L-1m-P6o" secondAttribute="trailing" id="ccF-tU-t68"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="YJ6-Cv-YDR" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5UV-Yc-cix"/>
+                <constraint firstAttribute="trailing" secondItem="YJ6-Cv-YDR" secondAttribute="trailing" id="HQh-se-sJe"/>
+                <constraint firstAttribute="bottom" secondItem="YJ6-Cv-YDR" secondAttribute="bottom" id="jsJ-Eo-arE"/>
+                <constraint firstItem="YJ6-Cv-YDR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="u27-hN-7mt"/>
+            </constraints>
+            <size key="customSize" width="137" height="233"/>
+            <connections>
+                <outlet property="personImage" destination="m2L-1m-P6o" id="JNY-kc-r2U"/>
+                <outlet property="personNameLabel" destination="5v1-Ux-TDF" id="Zye-8o-qaf"/>
+            </connections>
+            <point key="canvasLocation" x="194.92753623188406" y="124.88839285714285"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

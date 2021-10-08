@@ -15,13 +15,14 @@ protocol MovieDetailViewModelType {
     // MARK: - Property
     var dataDidChange: Listener? { get set }
     var movieResponse: Movie { get }
+    var creditDataSourceDelegate: CreditDataSourceDelegate! { get }
     
     // MARK: - Data
     func showData()
     
     // MARK: - Action
     var backDidTap: Void { get set }
-    var playDidTap: Void { get set}
+    var playDidTap: Void { get set }
 }
 
 final class MovieDetailViewModel: MovieDetailViewModelType {
@@ -43,6 +44,11 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
             dataDidChange?(self)
         }
     }
+    var creditDataSourceDelegate: CreditDataSourceDelegate! {
+        didSet {
+            dataDidChange?(self)
+        }
+    }
     
     // MARK: - Data
     func showData() {
@@ -51,11 +57,9 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
             self.movieResponse = movie
         }
         
-        useCase.getCredit(by: movie) { [weak self] credit in
+        useCase.getCredit(by: movie) { [weak self] creditResponse in
             guard let self = self else { return }
-            print("------ debug id = ", credit.id)
-            print("------ debug cast = ", credit.cast)
-            print("------ debug crew = ", credit.crew)
+            self.creditDataSourceDelegate = CreditDataSourceDelegate(creditResponse: creditResponse)
         }
     }
     

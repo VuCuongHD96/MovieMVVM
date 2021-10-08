@@ -40,6 +40,7 @@ final class MovieDetailViewController: UIViewController {
     // MARK: - Bind Data
     private func bindViewModel() {
         setupMovieData(viewModel.movieResponse)
+        setupCreditCollectionView()
     }
     
     // MARK: - Action
@@ -111,6 +112,13 @@ extension MovieDetailViewController: ViewControllerType {
             guard let self = self else { return }
             self.hideAnimation()
         }
+    }
+    
+    private func setupCreditCollectionView() {
+        castCollectionView.register(cellType: CreditCell.self)
+        castCollectionView.dataSource = viewModel.creditDataSourceDelegate
+        castCollectionView.delegate = viewModel.creditDataSourceDelegate
+        castCollectionView.reloadData()
     }
 }
 
