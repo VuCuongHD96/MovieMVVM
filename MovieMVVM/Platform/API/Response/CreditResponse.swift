@@ -10,16 +10,19 @@ import ObjectMapper
 class CreditResponse: Mappable {
     
     var id = 0
-    var cast = [Cast]()
-    var crew = [Crew]()
+    var castArray = [Cast]()
+    var crewArray = [Crew]()
+    var personArray: [Person] {
+        return castArray + crewArray
+    }
     
-    required init(map: Map) {
-        mapping(map: map)
+    required convenience init?(map: Map) {
+        self.init()
     }
     
     func mapping(map: Map) {
         id <- map["id"]
-        cast <- map["cast"]
-        crew <- map["crew"]
+        castArray <- map["cast"]
+        crewArray <- map["crew"]
     }
 }
