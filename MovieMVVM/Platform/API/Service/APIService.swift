@@ -9,27 +9,29 @@ import ObjectMapper
 struct APIService {
     static let share = APIService()
     private var alamofireManager = Alamofire.Session.default
-
+    
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
         alamofireManager = Alamofire.Session(configuration: configuration)
-//        alamofireManager.adapter = CustomRequestAdapter()
+        //        alamofireManager.adapter = CustomRequestAdapter()
     }
-
+    
     func request<T: Mappable>(input: BaseRequest, completion: @escaping (_ value: T?, _ error: BaseError?) -> Void) {
-
-        print("\n------------REQUEST INPUT")
-        print("Link: %@", input.url)
-        print("Body: %@", input.body ?? "No Body")
-        print("------------ END REQUEST INPUT\n")
-
+        
+        
         alamofireManager.request(input.url, method: input.requestType, parameters: input.body, encoding: input.encoding)
             .validate(statusCode: 200..<500)
             .responseJSON { response in
                 print(response.request?.url ?? "Error")
+                print("\n------------REQUEST INPUT")
+                print("Link: %@", input.url)
+                print("Body: %@", input.body ?? "No Body")
+                print("------------ END REQUEST INPUT\n")
+                print("------------ START Response --------")
                 print(response)
+                print(" ------------ END Response --------")
                 switch response.result {
                 case .success(let value):
                     guard let statusCode = response.response?.statusCode else {
@@ -49,6 +51,6 @@ struct APIService {
                 case .failure(let error):
                     completion(nil, error as? BaseError)
                 }
-        }
+            }
     }
 }
