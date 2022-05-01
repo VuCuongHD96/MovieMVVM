@@ -7,7 +7,7 @@
 
 import ObjectMapper
 
-class Trailer: Mappable {
+struct Trailer: Codable {
     
     var name = ""
     var key = ""
@@ -19,24 +19,14 @@ class Trailer: Mappable {
     var id = ""
     var infor: String {
         let dateInput = Date.fromString(publishedAt)
-        return Date.stringFrom(date: dateInput)
+        return Date.stringFrom(dateInput: dateInput)
     }
     
-    required convenience init?(map: Map) {
-        self.init()
-    }
-}
-
-extension Trailer {
-    
-    func mapping(map: Map) {
-        name <- map["name"]
-        key <- map["key"]
-        site <- map["site"]
-        size <- map["size"]
-        type <- map["type"]
-        official <- map["official"]
-        publishedAt <- map["published_at"]
-        id <- map["id"]
+    enum CodingKeys: String, CodingKey {
+        case name
+        case key
+        case site, size, type, official
+        case publishedAt = "published_at"
+        case id
     }
 }

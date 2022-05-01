@@ -109,6 +109,7 @@
 		A45FCDEA2710545400BF290F /* CreditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDE82710545400BF290F /* CreditCell.swift */; };
 		A45FCDEB2710545400BF290F /* CreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FCDE92710545400BF290F /* CreditCell.xib */; };
 		A461E5B2280C677100AB8FB5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461E5B1280C677100AB8FB5 /* Person.swift */; };
+		A4F48D4F281E85230041A641 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F48D4E281E85230041A641 /* JSONManager.swift */; };
 		FEB836187A59B34F0EE96D94 /* Pods_MovieMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0A2424C70713C2C837CE7 /* Pods_MovieMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -213,12 +214,14 @@
 		84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreImageCell.xib; sourceTree = "<group>"; };
 		84EE81D126D9DE5400E38477 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		84FDF81926D935CE00B5767C /* GenreDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataSourceDelegate.swift; sourceTree = "<group>"; };
+		A4154A5A282137FF00384A1D /* DateMyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DateMyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		A45FCDDB2710483100BF290F /* CreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRepository.swift; sourceTree = "<group>"; };
 		A45FCDDF27104A4C00BF290F /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
 		A45FCDE227104B2C00BF290F /* CreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResponse.swift; sourceTree = "<group>"; };
 		A45FCDE82710545400BF290F /* CreditCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCell.swift; sourceTree = "<group>"; };
 		A45FCDE92710545400BF290F /* CreditCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCell.xib; sourceTree = "<group>"; };
 		A461E5B1280C677100AB8FB5 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		A4F48D4E281E85230041A641 /* JSONManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONManager.swift; sourceTree = "<group>"; };
 		F1E0A2424C70713C2C837CE7 /* Pods_MovieMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -254,6 +257,7 @@
 		8408930D26D7E66B0064E851 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
+				A4F48D4D281E85170041A641 /* JSONManager */,
 				8408933326D7E66B0064E851 /* Repositories */,
 				8408930E26D7E66B0064E851 /* API */,
 			);
@@ -468,6 +472,7 @@
 		8458A85D26D6793E0081BED2 /* MovieMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				A4154A59282137D300384A1D /* PlayGround */,
 				84E9807226DFD26F007D4F0A /* Define */,
 				84D8AB7526D92A1900E5539F /* Extension */,
 				8408938226D7E96D0064E851 /* Utils */,
@@ -634,6 +639,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A4154A59282137D300384A1D /* PlayGround */ = {
+			isa = PBXGroup;
+			children = (
+				A4154A5A282137FF00384A1D /* DateMyPlayground.playground */,
+			);
+			path = PlayGround;
+			sourceTree = "<group>";
+		};
 		A45FCDE72710543600BF290F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,6 +654,14 @@
 				A45FCDE92710545400BF290F /* CreditCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A4F48D4D281E85170041A641 /* JSONManager */ = {
+			isa = PBXGroup;
+			children = (
+				A4F48D4E281E85230041A641 /* JSONManager.swift */,
+			);
+			path = JSONManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -816,6 +837,7 @@
 				8481DD0126DD10F900AF2E05 /* MovieByGenreDataSourceDelegate.swift in Sources */,
 				8408935C26D7E66B0064E851 /* Genre.swift in Sources */,
 				840C75AC26F1D041001FC2CD /* TrailerNavigator.swift in Sources */,
+				A4F48D4F281E85230041A641 /* JSONManager.swift in Sources */,
 				842F113A26D7BBA100731112 /* AppNavigator.swift in Sources */,
 				847E67D726DE75D700139926 /* SearchUseCase.swift in Sources */,
 				8491B7E726EF7094006A6486 /* Cast.swift in Sources */,

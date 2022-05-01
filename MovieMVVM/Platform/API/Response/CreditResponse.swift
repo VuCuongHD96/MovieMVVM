@@ -7,7 +7,7 @@
 
 import ObjectMapper
 
-class CreditResponse: Mappable {
+class CreditResponse: Codable {
     
     var id = 0
     var castArray = [Cast]()
@@ -16,13 +16,18 @@ class CreditResponse: Mappable {
         return castArray + crewArray
     }
     
-    required convenience init?(map: Map) {
-        self.init()
+    enum CodingKeys: String, CodingKey {
+        case id
+        case castArray = "cast"
+        case crewArray = "crew"
     }
     
-    func mapping(map: Map) {
-        id <- map["id"]
-        castArray <- map["cast"]
-        crewArray <- map["crew"]
+    init() { }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        id = try container.decode(Int.self, forKey: .id)
+        castArray = try container.decode([Cast].self, forKey: .castArray)
+        crewArray = try container.decode([Crew].self, forKey: .crewArray)
     }
 }

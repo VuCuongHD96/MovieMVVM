@@ -8,14 +8,6 @@
 
 import ObjectMapper
 
-class GenreResponse: Mappable {
-    var genres = [Genre]()
-    
-    required init(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
-        genres <- map["genres"]
-    }
+struct GenresResponse: Codable {
+    let genres: [Genre]
 }

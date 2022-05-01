@@ -4,7 +4,6 @@
 
 
 import Alamofire
-import ObjectMapper
 
 struct APIService {
     static let share = APIService()
@@ -15,10 +14,9 @@ struct APIService {
         configuration.timeoutIntervalForRequest = 30
         configuration.timeoutIntervalForResource = 30
         alamofireManager = Alamofire.Session(configuration: configuration)
-//        alamofireManager.adapter = CustomRequestAdapter()
     }
-
-    func request<T: Mappable>(input: BaseRequest, completion: @escaping (_ value: T?, _ error: BaseError?) -> Void) {
+    
+    func request<T: Codable>(input: BaseRequest, completion: @escaping (_ value: T?, _ error: BaseError?) -> Void) {
 
         print("\n------------REQUEST INPUT")
         print("Link: %@", input.url)
@@ -37,14 +35,12 @@ struct APIService {
                         return
                     }
                     if statusCode == 200 {
-                        let object = Mapper<T>().map(JSONObject: value)
+                        let object = JSONManager.decode(T.self, from: value)
                         completion(object, nil)
                     } else {
-                        guard let error = Mapper<ErrorResponse>().map(JSONObject: value) else {
-                            completion(nil, BaseError.httpError(httpCode: statusCode))
-                            return
-                        }
-                        completion(nil, BaseError.apiFailure(error: error))
+                        let baseError = BaseError.httpError(httpCode: statusCode)
+                        print("------------- Base Error ------- ", baseError.errorMessage ?? "no error")
+                        completion(nil, baseError)
                     }
                 case .failure(let error):
                     completion(nil, error as? BaseError)

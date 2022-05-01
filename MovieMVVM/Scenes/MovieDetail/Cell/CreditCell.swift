@@ -24,7 +24,7 @@ final class CreditCell: UICollectionViewCell, NibReusable {
     }
     
     func setContent(person: Person) {
-        let url = URL(string: URLs.APIImagesOriginalPath + person.profilePath)
+        let url = URL(string: URLs.APIImagesOriginalPath + person.profilePathValue)
         personImage.sd_setImage(with: url) 
         personNameLabel.text = person.name
     }

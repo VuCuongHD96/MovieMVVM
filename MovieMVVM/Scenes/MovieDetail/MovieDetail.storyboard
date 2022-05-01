@@ -65,7 +65,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIJ-0x-mgy" userLabel="HeaderView">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="402.66666666666669"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-Ja-k7e">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4kO-Ja-k7e">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="300" id="2Sx-wN-Cxq"/>
@@ -348,7 +348,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="BackgroundImage" width="375" height="280"/>
         <image name="FavoriteWhite" width="54" height="54"/>
         <image name="PosterImage" width="120" height="181"/>
         <image name="back" width="33.333332061767578" height="33.333332061767578"/>

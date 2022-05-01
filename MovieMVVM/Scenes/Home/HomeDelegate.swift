@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeDelegate: class {
+protocol HomeDelegate: AnyObject {
     
     func passMovie(_ movie: Movie) 
 }

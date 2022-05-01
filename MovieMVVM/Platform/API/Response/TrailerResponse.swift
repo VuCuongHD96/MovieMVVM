@@ -7,14 +7,12 @@
 
 import ObjectMapper
 
-class TrailerResponse: Mappable {
-    var trailer = [Trailer]()
+struct TrailerResponse: Codable {
+    let id: Int
+    let trailers: [Trailer]
     
-    required init(map: Map) {
-        mapping(map: map)
-    }
-    
-    func mapping(map: Map) {
-        trailer <- map["results"]
+    enum CodingKeys: String, CodingKey {
+        case id
+        case trailers = "results"
     }
 }

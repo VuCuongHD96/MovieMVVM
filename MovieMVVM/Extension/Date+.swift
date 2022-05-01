@@ -9,17 +9,18 @@ import Foundation
 
 extension Date {
     
-    static func fromString(_ data: String) -> Date {
-        let dateInputFormat = DateFormatter()
-        dateInputFormat.dateFormat = "YYYY-MM-dd"
-        let dateInput = dateInputFormat.date(from: data) ?? Date()
+    static func fromString(_ dateString: String) -> Date {
+        let dateInputFormatter = DateFormatter()
+        dateInputFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let dateInput = dateInputFormatter.date(from: dateString) ?? Date()
         return dateInput
     }
     
-    static  func stringFrom(date: Date) -> String {
-        let dateOutputFormat = DateFormatter()
-        dateOutputFormat.dateFormat = "EEEE - dd - MM - YYYY"
-        let dateString = dateOutputFormat.string(from: date)
-        return dateString
+    static func stringFrom(dateInput: Date) -> String {
+        let dateOutputFormatter = DateFormatter()
+        dateOutputFormatter.locale = Locale(identifier: "en")
+        dateOutputFormatter.dateFormat = "EEEE, MMM d, yyyy"
+        let dateOutput = dateOutputFormatter.string(from: dateInput)
+        return dateOutput
     }
 }

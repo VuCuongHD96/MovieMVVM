@@ -19,7 +19,7 @@ struct TrailerUseCase: TrailerUseCaseType {
         trailerRepository.getTrailerList(by: movie) { response in
             switch response {
             case.success(let trailerResponse):
-                guard let trailerArray = trailerResponse?.trailer else {
+                guard let trailerArray = trailerResponse?.trailers else {
                     return
                 }
                 completion(trailerArray)
