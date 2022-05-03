@@ -8,18 +8,9 @@
 
 import ObjectMapper
 
-final class Genre: Mappable {
+struct Genre: Codable {
     var id: Int = 0
-    var name = ""
+    var name: String = ""
     
-    required init?(map: Map) {
-    }
-    
-    required init() {
-    }
-    
-    func mapping(map: Map) {
-        id <- map["id"]
-        name <- map["name"]
-    }
+    init() { }
 }

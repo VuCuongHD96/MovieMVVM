@@ -3,9 +3,8 @@
 //  Movie
 
 import Foundation
-import ObjectMapper
 
-enum BaseResult<T: Mappable> {
+enum BaseResult<T: Codable> {
     case success(T?)
     case failure(error: BaseError?)
 }
