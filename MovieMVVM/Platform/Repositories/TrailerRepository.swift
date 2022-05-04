@@ -6,30 +6,20 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol TrailerRepositoryType {
-    func getTrailerList(by movie: Movie, completion: @escaping (BaseResult<TrailerResponse>) -> Void)
+    func getTrailerList(by movie: Movie) -> Promise<TrailerResponse>
 }
 
-final class TrailerRepository: TrailerRepositoryType {
+final class TrailerRepository: BaseRepository, TrailerRepositoryType {
     
-    private var api: APIService!
-    
-    required init(api: APIService) {
-        self.api = api
-    }
-    
-    func getTrailerList(by movie: Movie, completion: @escaping (BaseResult<TrailerResponse>) -> Void) {
-        guard let api = api else { return }
+    func getTrailerList(by movie: Movie) -> Promise<TrailerResponse> {
         let input = TrailerRequest(movieID: movie.id)
-        api.request(input: input) { (object: TrailerResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }.compactMap { (trailerResponse: TrailerResponse?) in
+            return trailerResponse
         }
     }
 }

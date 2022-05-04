@@ -22,7 +22,9 @@ target 'MovieMVVM' do
   pod 'Cosmos', '~> 23.0'
 
   # Data Base
-  pod 'RealmSwift'	
+  pod 'RealmSwift'
+  
+  pod "PromiseKit"
   
   post_install do |installer|
         installer.pods_project.build_configurations.each do |config|

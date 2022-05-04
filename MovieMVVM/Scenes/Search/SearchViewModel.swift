@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol SearchViewModelType {
     
@@ -54,9 +55,12 @@ final class SearchViewModel: SearchViewModelType {
     }
     
     private func searchMovie(by text: String) {
-        self.useCase.searchMovie(by: text) { [weak self] movieArray in
-            guard let self = self else { return }
+        firstly {
+            useCase.searchMovie(by: text)
+        }.done { movieArray in
             self.setupSearchData(by: movieArray)
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     

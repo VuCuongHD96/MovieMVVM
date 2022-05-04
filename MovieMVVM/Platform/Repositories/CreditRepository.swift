@@ -6,30 +6,20 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol CreditRepositoryType {
-    func getCredit(by movie: Movie, completion: @escaping (BaseResult<CreditResponse>) -> Void)
+    func getCredit(by movie: Movie) -> Promise<CreditResponse> 
 }
 
-final class CreditRepository: CreditRepositoryType {
+final class CreditRepository: BaseRepository, CreditRepositoryType {
     
-    private var api: APIService!
-    
-    required init(api: APIService) {
-        self.api = api
-    }
-    
-    func getCredit(by movie: Movie, completion: @escaping (BaseResult<CreditResponse>) -> Void) {
-        guard let api = api else { return }
+    func getCredit(by movie: Movie) -> Promise<CreditResponse> {
         let input = CreditRequest(movieID: movie.id)
-        api.request(input: input) { (object: CreditResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }.compactMap { (creditResponse: CreditResponse?) in
+            creditResponse
         }
     }
 }

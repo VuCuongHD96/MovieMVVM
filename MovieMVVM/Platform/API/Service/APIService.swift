@@ -4,11 +4,12 @@
 
 
 import Alamofire
+import PromiseKit
 
 struct APIService {
     static let share = APIService()
     private var alamofireManager = Alamofire.Session.default
-
+    
     init() {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 30
@@ -16,34 +17,25 @@ struct APIService {
         alamofireManager = Alamofire.Session(configuration: configuration)
     }
     
-    func request<T: Codable>(input: BaseRequest, completion: @escaping (_ value: T?, _ error: BaseError?) -> Void) {
-
+    func request<T: Codable>(input: BaseRequest) -> Promise<T?> {
+        
         print("\n------------REQUEST INPUT")
         print("Link: %@", input.url)
         print("Body: %@", input.body ?? "No Body")
         print("------------ END REQUEST INPUT\n")
-
-        alamofireManager.request(input.url, method: input.requestType, parameters: input.body, encoding: input.encoding)
-            .validate(statusCode: 200..<500)
-            .responseJSON { response in
-                print(response.request?.url ?? "Error")
-                print(response)
-                switch response.result {
-                case .success(let value):
-                    guard let statusCode = response.response?.statusCode else {
-                        completion(nil, BaseError.unexpectedError)
-                        return
-                    }
-                    if statusCode == 200 {
+        
+        return Promise<T?> { seal in
+            alamofireManager.request(input.url, method: input.requestType, parameters: input.body, encoding: input.encoding)
+                .validate(statusCode: 200..<500)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success(let value):
+                        print(response)
                         let object = JSONManager.decode(T.self, from: value)
-                        completion(object, nil)
-                    } else {
-                        let baseError = BaseError.httpError(httpCode: statusCode)
-                        print("------------- Base Error ------- ", baseError.errorMessage ?? "no error")
-                        completion(nil, baseError)
+                        seal.fulfill(object)
+                    case .failure(let error):
+                        seal.reject(error)
                     }
-                case .failure(let error):
-                    completion(nil, error as? BaseError)
                 }
         }
     }

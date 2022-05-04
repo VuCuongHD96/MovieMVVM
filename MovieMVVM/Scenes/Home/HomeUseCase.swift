@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol HomeUseCaseType {
-    func getMovieList(by type: MovieType, completion: @escaping ([Movie]) -> Void) 
+    func getMovieList(by type: MovieType) -> Promise<[Movie]>
 }
 
 struct HomeUseCase: HomeUseCaseType {
     
     private let movieRepository = MovieRepository(api: APIService.share)
     
-    func getMovieList(by type: MovieType, completion: @escaping ([Movie]) -> Void) {
-        movieRepository.getMovieList(by: type) { result in
-            switch result {
-            case .success(let genreResponse):
-                guard let results = genreResponse?.movies else { return }
-                completion(results)
-            case .failure(let error):
-                print(error as Any)
-            }
+    func getMovieList(by type: MovieType) -> Promise<[Movie]> {
+        return firstly {
+            movieRepository.getMovieList(by: type)
+        }.map { movieResponse in
+            movieResponse.movies
         }
     }
 }

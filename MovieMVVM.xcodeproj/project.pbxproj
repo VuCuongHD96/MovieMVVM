@@ -103,6 +103,7 @@
 		84EE81CC26D9DD1800E38477 /* GenreImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */; };
 		84EE81D226D9DE5400E38477 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE81D126D9DE5400E38477 /* UIView+.swift */; };
 		84FDF81A26D935CE00B5767C /* GenreDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDF81926D935CE00B5767C /* GenreDataSourceDelegate.swift */; };
+		A43B33B52826A13400316814 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B33B42826A13400316814 /* BaseRepository.swift */; };
 		A45FCDDC2710483100BF290F /* CreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDDB2710483100BF290F /* CreditRepository.swift */; };
 		A45FCDE027104A4C00BF290F /* CreditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDDF27104A4C00BF290F /* CreditRequest.swift */; };
 		A45FCDE327104B2C00BF290F /* CreditResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDE227104B2C00BF290F /* CreditResponse.swift */; };
@@ -214,7 +215,7 @@
 		84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreImageCell.xib; sourceTree = "<group>"; };
 		84EE81D126D9DE5400E38477 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		84FDF81926D935CE00B5767C /* GenreDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataSourceDelegate.swift; sourceTree = "<group>"; };
-		A4154A5A282137FF00384A1D /* DateMyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DateMyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		A43B33B42826A13400316814 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		A45FCDDB2710483100BF290F /* CreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRepository.swift; sourceTree = "<group>"; };
 		A45FCDDF27104A4C00BF290F /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
 		A45FCDE227104B2C00BF290F /* CreditResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResponse.swift; sourceTree = "<group>"; };
@@ -338,6 +339,7 @@
 			isa = PBXGroup;
 			children = (
 				8408938A26D7EC6E0064E851 /* GenreRepository.swift */,
+				A43B33B42826A13400316814 /* BaseRepository.swift */,
 				8481DD0526DD17D200AF2E05 /* MovieRepository.swift */,
 				84E3AB2826F237A9009DCE1F /* TrailerRepository.swift */,
 				A45FCDDB2710483100BF290F /* CreditRepository.swift */,
@@ -472,7 +474,6 @@
 		8458A85D26D6793E0081BED2 /* MovieMVVM */ = {
 			isa = PBXGroup;
 			children = (
-				A4154A59282137D300384A1D /* PlayGround */,
 				84E9807226DFD26F007D4F0A /* Define */,
 				84D8AB7526D92A1900E5539F /* Extension */,
 				8408938226D7E96D0064E851 /* Utils */,
@@ -637,14 +638,6 @@
 				84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		A4154A59282137D300384A1D /* PlayGround */ = {
-			isa = PBXGroup;
-			children = (
-				A4154A5A282137FF00384A1D /* DateMyPlayground.playground */,
-			);
-			path = PlayGround;
 			sourceTree = "<group>";
 		};
 		A45FCDE72710543600BF290F /* Cell */ = {
@@ -882,6 +875,7 @@
 				8481DD0926DD18A300AF2E05 /* MovieResponse.swift in Sources */,
 				8408933F26D7E66B0064E851 /* BaseResult.swift in Sources */,
 				8408938726D7E9C10064E851 /* APIKey.swift in Sources */,
+				A43B33B52826A13400316814 /* BaseRepository.swift in Sources */,
 				84CB073126DA4F6D00311E11 /* TopMovieDataSourceDelegate.swift in Sources */,
 				847E67DD26DE797E00139926 /* MovieDetailNavigator.swift in Sources */,
 				84CB072826DA47F900311E11 /* ViewControllerType.swift in Sources */,
