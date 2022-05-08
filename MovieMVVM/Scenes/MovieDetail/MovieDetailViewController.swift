@@ -95,9 +95,9 @@ extension MovieDetailViewController: ViewControllerType {
     }
     
     private func setupDispatchGroup(_ movie: Movie) {
-        let backDropUrlSring = URLs.APIImagesOriginalPath + movie.backdropPath
+        let backDropUrlSring = URLs.APIImagesOriginalPath + movie.posterPathValue
         let backDropURL = URL(string: backDropUrlSring)
-        let posterUrlString = URLs.APIImagesOriginalPath + movie.posterPath
+        let posterUrlString = URLs.APIImagesOriginalPath + movie.posterPathValue
         let posterURL = URL(string: posterUrlString)
         let group = DispatchGroup()
         group.enter()

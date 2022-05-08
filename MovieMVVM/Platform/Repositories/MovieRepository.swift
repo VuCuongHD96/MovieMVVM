@@ -10,7 +10,7 @@ import Foundation
 protocol MovieRepositoryType {
     func getMovieList(by genre: Genre, completion: @escaping (BaseResult<MovieResponse>) -> Void)
     func searchMovie(query: String, completion: @escaping (BaseResult<MovieResponse>) -> Void)
-    func getMovieList(by type: MovieType, completion: @escaping (BaseResult<MovieResponse>) -> Void) 
+    func getMovieList(by type: MovieType, completion: @escaping (BaseResult<MovieResponse>) -> Void)
 }
 
 final class MovieRepository: MovieRepositoryType {

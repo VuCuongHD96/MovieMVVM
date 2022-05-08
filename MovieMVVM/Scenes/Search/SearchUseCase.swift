@@ -8,7 +8,7 @@
 import Foundation
 
 protocol SearchUseCaseType {
-    func searchMovie(by query: String, completion: @escaping ([Movie]) -> Void) 
+    func searchMovie(by query: String, completion: @escaping ([Movie]) -> Void)
 }
 
 struct SearchUseCase: SearchUseCaseType {
