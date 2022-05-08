@@ -48,7 +48,7 @@ final class MovieByGenreCell: UITableViewCell, NibReusable {
         releaseDateLabel.text = data.infor
         movieName.text = data.title
         descriptionLabel.text = data.overview
-        let urlString = URLs.APIImagesOriginalPath + data.posterPath
+        let urlString = URLs.APIImagesOriginalPath + data.posterPathValue
         let url = URL(string: urlString)
         movieImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }

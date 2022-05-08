@@ -37,7 +37,7 @@ final class NowCell: UICollectionViewCell, NibReusable {
     // MARK: - Data
     func setContent(data: Movie) {
         movieTitleLabel.text = data.title
-        let urlString = URLs.APIImagesOriginalPath + data.posterPath
+        let urlString = URLs.APIImagesOriginalPath + data.posterPathValue
         let url = URL(string: urlString)
         movieImageView.sd_setImage(with: url,
                                    placeholderImage: UIImage(named: "noposter"),
