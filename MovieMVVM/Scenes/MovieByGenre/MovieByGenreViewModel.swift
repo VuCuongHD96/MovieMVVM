@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol MovieByGenreViewModelType {
     
@@ -54,10 +55,13 @@ final class MovieByGenreViewModel: MovieByGenreViewModelType {
     func showData() {
         genreName = genre.name.uppercased()
         movieByGenreDataSourceDelegate = MovieByGenreDataSourceDelegate()
-        useCase.getMovieList(by: genre) { [weak self] movieArray in
-            guard let self = self else { return }
+        firstly {
+            useCase.getMovieList(by: genre)
+        }.done { movieArray in
             self.movieByGenreDataSourceDelegate = MovieByGenreDataSourceDelegate(movieArray: movieArray)
             self.setupMovieAction()
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     

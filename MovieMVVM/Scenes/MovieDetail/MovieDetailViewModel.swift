@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol MovieDetailViewModelType {
     
@@ -52,14 +53,20 @@ final class MovieDetailViewModel: MovieDetailViewModelType {
     
     // MARK: - Data
     func showData() {
-        useCase.getMovieDetail(by: movie) { [weak self] movie in
-            guard let self = self else { return }
+        firstly {
+            useCase.getMovieDetail(by: movie)
+        }.done { movie in
             self.movieResponse = movie
+        }.catch { error in
+            print(error.localizedDescription)
         }
         
-        useCase.getCredit(by: movie) { [weak self] creditResponse in
-            guard let self = self else { return }
+        firstly {
+            useCase.getCredit(by: movie)
+        }.done { creditResponse in
             self.creditDataSourceDelegate = CreditDataSourceDelegate(creditResponse: creditResponse)
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     

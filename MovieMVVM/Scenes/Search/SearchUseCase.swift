@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol SearchUseCaseType {
-    func searchMovie(by query: String, completion: @escaping ([Movie]) -> Void)
+    func searchMovie(by query: String) -> Promise<[Movie]>
 }
 
 struct SearchUseCase: SearchUseCaseType {
     
     private let movieRepository = MovieRepository(api: APIService.share)
     
-    func searchMovie(by query: String, completion: @escaping ([Movie]) -> Void) {
-        movieRepository.searchMovie(query: query) { result in
-            switch result {
-            case .success(let genreResponse):
-                guard let results = genreResponse?.movies else { return }
-                completion(results)
-            case .failure(let error):
-                print(error as Any)
-            }
+    func searchMovie(by query: String) -> Promise<[Movie]> {
+        return firstly {
+            movieRepository.searchMovie(query: query)
+        }.map { movieResponse in
+            movieResponse.movies
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol TrailerViewModelType {
     
@@ -47,10 +48,13 @@ final class TrailerViewModel: TrailerViewModelType {
     // MARK: - Data
     func showData() {
         trailerDataSourceDelegate = TrailerDataSourceDelegate()
-        useCase.getTrailerList(movie) { [weak self] trailerArray in
-            guard let self = self else { return }
+        firstly {
+            useCase.getTrailerList(movie)
+        }.done { trailerArray in
             self.trailerDataSourceDelegate = TrailerDataSourceDelegate(trailerArray: trailerArray)
             self.setupActionTrailer()
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     

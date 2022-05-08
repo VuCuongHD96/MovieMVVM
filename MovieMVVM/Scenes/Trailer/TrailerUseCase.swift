@@ -6,26 +6,21 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol TrailerUseCaseType {
-    func getTrailerList(_ movie: Movie, completion: @escaping ([Trailer]) -> Void)
+    func getTrailerList(_ movie: Movie) -> Promise<[Trailer]>
 }
 
 struct TrailerUseCase: TrailerUseCaseType {
     
     let trailerRepository = TrailerRepository(api: APIService.share)
     
-    func getTrailerList(_ movie: Movie, completion: @escaping ([Trailer]) -> Void) {
-        trailerRepository.getTrailerList(by: movie) { response in
-            switch response {
-            case.success(let trailerResponse):
-                guard let trailerArray = trailerResponse?.trailers else {
-                    return
-                }
-                completion(trailerArray)
-            case .failure(error: let error):
-                print(error as Any)
-            }
+    func getTrailerList(_ movie: Movie) -> Promise<[Trailer]> {       
+        return firstly {
+            trailerRepository.getTrailerList(by: movie)
+        }.map { trailerResponse in
+            return trailerResponse.trailers
         }
     }
 }

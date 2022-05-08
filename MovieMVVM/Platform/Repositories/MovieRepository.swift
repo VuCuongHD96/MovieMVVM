@@ -6,73 +6,53 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol MovieRepositoryType {
-    func getMovieList(by genre: Genre, completion: @escaping (BaseResult<MovieResponse>) -> Void)
-    func searchMovie(query: String, completion: @escaping (BaseResult<MovieResponse>) -> Void)
-    func getMovieList(by type: MovieType, completion: @escaping (BaseResult<MovieResponse>) -> Void)
+    func getMovieList(by genre: Genre) -> Promise<MovieResponse>
+    func searchMovie(query: String) -> Promise<MovieResponse>
+    func getMovieList(by type: MovieType) -> Promise<MovieResponse>
 }
 
-final class MovieRepository: MovieRepositoryType {
-    private var api: APIService!
+final class MovieRepository: BaseRepository, MovieRepositoryType {
     
-    required init(api: APIService) {
-        self.api = api
-    }
-    
-    func getMovieList(by genre: Genre, completion: @escaping (BaseResult<MovieResponse>) -> Void) {
-        guard let api = api else { return }
+    func getMovieList(by genre: Genre) -> Promise<MovieResponse> {
         let input = MovieRequest(genreID: genre.id)
-        api.request(input: input) { (object: MovieResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }
+        .compactMap { (movieResponse: MovieResponse?) in
+            return movieResponse
         }
     }
     
-    func searchMovie(query: String, completion: @escaping (BaseResult<MovieResponse>) -> Void) {
-        guard let api = api else { return }
+    func searchMovie(query: String) -> Promise<MovieResponse> {
         let input = SearchRequest(query: query)
-        api.request(input: input) { (object: MovieResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }
+        .compactMap { (movieResponse: MovieResponse?) in
+            return movieResponse
         }
     }
     
-    func getMovieList(by type: MovieType, completion: @escaping (BaseResult<MovieResponse>) -> Void) {
-        guard let api = api else { return }
+    func getMovieList(by type: MovieType) -> Promise<MovieResponse> {
         let input = MovieRequest(type: type)
-        api.request(input: input) { (object: MovieResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }
+        .compactMap { (movieResponse: MovieResponse?) in
+            return movieResponse
         }
     }
     
-    func getMovieDetail(by movie: Movie, completion: @escaping (BaseResult<Movie>) -> Void) {
-        guard let api = api else { return }
+    func getMovieDetail(by movie: Movie) -> Promise<Movie> {
         let input = MovieRequest(movieID: movie.id)
-        api.request(input: input) { (object: Movie?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }
+        .compactMap { (movie: Movie?) in
+            return movie
         }
     }
 }

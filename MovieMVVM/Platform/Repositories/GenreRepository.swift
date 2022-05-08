@@ -6,29 +6,20 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol GenreRepositoryType {
-    func getGenreList(completion: @escaping (BaseResult<GenresResponse>) -> Void)
+    func getGenreList() -> Promise<GenresResponse>
 }
 
-final class GenreRepository: GenreRepositoryType {
-    private var api: APIService!
+final class GenreRepository: BaseRepository, GenreRepositoryType {
     
-    required init(api: APIService) {
-        self.api = api
-    }
-    
-    func getGenreList(completion: @escaping (BaseResult<GenresResponse>) -> Void) {
-        guard let api = api else { return }
+    func getGenreList() -> Promise<GenresResponse> {
         let input = GenreRequest()
-        api.request(input: input) { (object: GenresResponse?, error) in
-            guard let object = object else {
-                guard let error = error else {
-                    return completion(.failure(error: nil))
-                }
-                return completion(.failure(error: error))
-            }
-            completion(.success(object))
+        return firstly {
+            api.request(input: input)
+        }.compactMap { (genresResponse: GenresResponse?) in
+            return genresResponse
         }
     }
 }

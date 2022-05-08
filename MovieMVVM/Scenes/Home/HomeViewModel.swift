@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol HomeViewModelType {
     
@@ -51,16 +52,24 @@ final class HomeViewModel: HomeViewModelType {
     }
     
     private func getNowMovieData() {
-        useCase.getMovieList(by: .nowPlaying) { [unowned self] movieArray in
-            nowMovieDataSourceDelegate = NowMovieDataSourceDelegate(movieArray: movieArray)
-            nowMovieDataSourceDelegate.delegate = self
+        firstly {
+            useCase.getMovieList(by: .nowPlaying)
+        }.done { movieArray in
+            self.nowMovieDataSourceDelegate = NowMovieDataSourceDelegate(movieArray: movieArray)
+            self.nowMovieDataSourceDelegate.delegate = self
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     
     private func getTopMovieData() {
-        useCase.getMovieList(by: .topRated) { [unowned self] movieArray in
-            topMovieDataSourceDelegate = TopMovieDataSourceDelegate(movieArray: movieArray)
-            topMovieDataSourceDelegate.delegate = self
+        firstly {
+            useCase.getMovieList(by: .topRated)
+        }.done { movieArray in
+            self.topMovieDataSourceDelegate = TopMovieDataSourceDelegate(movieArray: movieArray)
+            self.topMovieDataSourceDelegate.delegate = self
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     

@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol GenreUseCaseType {
-    func getGenreList(completion: @escaping ([Genre]) -> Void)
+    func getGenreList() -> Promise<[Genre]>
 }
 
 final class GenreUseCase: GenreUseCaseType {
     
     private let genreRepository = GenreRepository(api: APIService.share)
 
-    func getGenreList(completion: @escaping ([Genre]) -> Void) {
-        genreRepository.getGenreList { result in
-            switch result {
-            case .success(let genreResponse):
-                guard let results = genreResponse?.genres else { return }
-                completion(results)
-            case .failure(let error):
-                print(error as Any)
-            }
+    func getGenreList() -> Promise<[Genre]> {
+        firstly {
+            genreRepository.getGenreList()
+        }.map { genresResponse in
+            return genresResponse.genres
         }
     }
 }

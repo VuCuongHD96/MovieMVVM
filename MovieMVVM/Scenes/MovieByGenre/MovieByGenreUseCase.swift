@@ -6,24 +6,21 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol MovieByGenreUseCaseType {
-    func getMovieList(by genre: Genre, completion: @escaping ([Movie]) -> Void) 
+    func getMovieList(by genre: Genre) -> Promise<[Movie]>
 }
 
 final class MovieByGenreUseCase: MovieByGenreUseCaseType {
     
     private let movieRepository = MovieRepository(api: APIService.share)
     
-    func getMovieList(by genre: Genre, completion: @escaping ([Movie]) -> Void) {
-        movieRepository.getMovieList(by: genre) { result in
-            switch result {
-            case .success(let genreResponse):
-                guard let results = genreResponse?.movies else { return }
-                completion(results)
-            case .failure(let error):
-                print(error as Any)
-            }
+    func getMovieList(by genre: Genre) -> Promise<[Movie]> {
+        return firstly {
+            movieRepository.getMovieList(by: genre)
+        }.map { movieResponse in
+            movieResponse.movies
         }
     }
 }

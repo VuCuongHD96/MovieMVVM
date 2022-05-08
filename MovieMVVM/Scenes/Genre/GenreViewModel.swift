@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 protocol GenreViewModelType {
     
@@ -44,8 +45,12 @@ final class GenreViewModel: GenreViewModelType {
     // MARK: - Data
     func showData() {
         genreDataSourceDelegate = GenreDataSourceDelegate()
-        useCase.getGenreList { genreArray in
+        firstly {
+            useCase.getGenreList()
+        }.done { genreArray in
             self.setupData(genreArray: genreArray)
+        }.catch { error in
+            print(error.localizedDescription)
         }
     }
     
