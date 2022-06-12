@@ -7,6 +7,7 @@
 
 import UIKit
 import Reusable
+import SkeletonView
 
 final class TrailerCell: UITableViewCell, NibReusable {
 
@@ -47,7 +48,7 @@ final class TrailerCell: UITableViewCell, NibReusable {
         let url = URL(string: urlImage)
         trailerImageView.sd_setImage(with: url) { [weak self] (_, _, _, _) in
             guard let self = self else { return }
-            self.hideSkeleton()
+            self.hideAnimation()
         }
     }
 }
