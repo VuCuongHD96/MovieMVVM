@@ -7,6 +7,7 @@
 
 import UIKit
 import Reusable
+import MobioSDKSwift
 
 final class MovieByGenreViewController: UIViewController {
     
@@ -22,12 +23,14 @@ final class MovieByGenreViewController: UIViewController {
             }
         }
     }
+    var analytics = MobioSDK.shared
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
         setupData()
+        analytics.scroll(tableView, screenName: "AccountViewController")
     }
     
     // MARK: - Bind Data
@@ -47,6 +50,12 @@ final class MovieByGenreViewController: UIViewController {
     
     @IBAction func searchAction(_ sender: Any) {
         viewModel.searchDidTap = Void()
+        let properties = [
+            "button_name": "search",
+            "screen_name": "search",
+            "status": "success"
+        ]
+        analytics.track(name: "sdk_mobile_test_click_button_in_app", properties: properties)
     }
 }
 

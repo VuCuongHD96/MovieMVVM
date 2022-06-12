@@ -24,7 +24,10 @@ target 'MovieMVVM' do
   # Data Base
   pod 'RealmSwift'
   
-  pod "PromiseKit"
+  pod "PromiseKit", '~> 6.16.1'
+
+  # Tracking
+  pod 'MobioSDKSwift', :git => 'https://gitbucket.mobio.vn/git/SDK_APP/ios_swift_lib.git', :branch => 'sprint_6'
   
   post_install do |installer|
         installer.pods_project.build_configurations.each do |config|
