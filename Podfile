@@ -8,23 +8,23 @@ target 'MovieMVVM' do
   # Pods for MovieMVVM
 
   # API
-  pod 'Alamofire', '~> 5.0.0-rc.3'
+  pod 'Alamofire'
   pod 'ObjectMapper'
   
   # View
   pod 'SkeletonView' 
-  pod 'SDWebImage', '~> 5.8.1'
+  pod 'SDWebImage'
   pod 'SwiftLint'
-  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'Toast-Swift'
   pod 'Reusable'
   pod 'Then'
   pod "Pastel"
-  pod 'Cosmos', '~> 23.0'
+  pod 'Cosmos'
 
   # Data Base
   pod 'RealmSwift'
   
-  pod "PromiseKit"
+  pod "PromiseKit", "~> 6.16.1"
   
   post_install do |installer|
         installer.pods_project.build_configurations.each do |config|

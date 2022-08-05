@@ -111,7 +111,7 @@
 		A45FCDEB2710545400BF290F /* CreditCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A45FCDE92710545400BF290F /* CreditCell.xib */; };
 		A461E5B2280C677100AB8FB5 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461E5B1280C677100AB8FB5 /* Person.swift */; };
 		A4F48D4F281E85230041A641 /* JSONManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F48D4E281E85230041A641 /* JSONManager.swift */; };
-		FEB836187A59B34F0EE96D94 /* Pods_MovieMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0A2424C70713C2C837CE7 /* Pods_MovieMVVM.framework */; };
+		FEB836187A59B34F0EE96D94 /* Pods_MovieMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1E0A2424C70713C2C837CE7 /* Pods_MovieMVVM.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -781,7 +781,7 @@
 		};
 		F8105D82B2D09C0953378740 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1038,6 +1038,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GCAT449K7M;
 				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = MovieMVVM/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1059,6 +1060,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GCAT449K7M;
 				EXCLUDED_ARCHS = arm64;
 				INFOPLIST_FILE = MovieMVVM/Support/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
