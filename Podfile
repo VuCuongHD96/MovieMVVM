@@ -20,6 +20,7 @@ target 'MovieMVVM' do
   pod 'Then'
   pod "Pastel"
   pod 'Cosmos', '~> 23.0'
+  pod 'YouTubePlayer'
 
   # Data Base
   pod 'RealmSwift'

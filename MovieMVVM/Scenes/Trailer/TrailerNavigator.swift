@@ -21,6 +21,8 @@ struct TrailerNavigator: TrailerNavigatorType {
     }
     
     func toVideoScreen(with trailer: Trailer) {
-        
+        print(trailer)
+        let viewController = PlayerViewController()
+        navigationController.pushViewController(viewController, animated: true)
     }
 }

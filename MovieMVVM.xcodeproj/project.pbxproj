@@ -103,6 +103,8 @@
 		84EE81CC26D9DD1800E38477 /* GenreImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */; };
 		84EE81D226D9DE5400E38477 /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE81D126D9DE5400E38477 /* UIView+.swift */; };
 		84FDF81A26D935CE00B5767C /* GenreDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FDF81926D935CE00B5767C /* GenreDataSourceDelegate.swift */; };
+		A42E5E6028579868004F4E99 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42E5E5E28579867004F4E99 /* PlayerViewController.swift */; };
+		A42E5E6128579868004F4E99 /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42E5E5F28579868004F4E99 /* PlayerViewController.xib */; };
 		A43B33B52826A13400316814 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A43B33B42826A13400316814 /* BaseRepository.swift */; };
 		A45FCDDC2710483100BF290F /* CreditRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDDB2710483100BF290F /* CreditRepository.swift */; };
 		A45FCDE027104A4C00BF290F /* CreditRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45FCDDF27104A4C00BF290F /* CreditRequest.swift */; };
@@ -215,6 +217,8 @@
 		84EE81CA26D9DD1800E38477 /* GenreImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenreImageCell.xib; sourceTree = "<group>"; };
 		84EE81D126D9DE5400E38477 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		84FDF81926D935CE00B5767C /* GenreDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreDataSourceDelegate.swift; sourceTree = "<group>"; };
+		A42E5E5E28579867004F4E99 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		A42E5E5F28579868004F4E99 /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 		A43B33B42826A13400316814 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		A45FCDDB2710483100BF290F /* CreditRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRepository.swift; sourceTree = "<group>"; };
 		A45FCDDF27104A4C00BF290F /* CreditRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditRequest.swift; sourceTree = "<group>"; };
@@ -498,6 +502,7 @@
 		8458A87826D682060081BED2 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A42E5E5D28579853004F4E99 /* Player */,
 				840C75A226F1D041001FC2CD /* Trailer */,
 				84CB071B26DA3B0300311E11 /* Search */,
 				84CB071426DA38F900311E11 /* MovieByGenre */,
@@ -640,6 +645,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		A42E5E5D28579853004F4E99 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				A42E5E5E28579867004F4E99 /* PlayerViewController.swift */,
+				A42E5E5F28579868004F4E99 /* PlayerViewController.xib */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
 		A45FCDE72710543600BF290F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -728,6 +742,7 @@
 				8458A86626D6793E0081BED2 /* Main.storyboard in Resources */,
 				843443FB26D6900E009300BB /* Home.storyboard in Resources */,
 				848EB6CB26E070A80069C536 /* NonSelectCollectionViewCell.xib in Resources */,
+				A42E5E6128579868004F4E99 /* PlayerViewController.xib in Resources */,
 				84CB071D26DA3B0E00311E11 /* Search.storyboard in Resources */,
 				840C75B226F1D041001FC2CD /* Trailer.storyboard in Resources */,
 				84CB072E26DA48B100311E11 /* NowCell.xib in Resources */,
@@ -812,6 +827,7 @@
 				8408934C26D7E66B0064E851 /* BaseRequest.swift in Sources */,
 				84CB072026DA3B1E00311E11 /* SearchViewController.swift in Sources */,
 				842F114626D7CE3D00731112 /* HomeViewModel.swift in Sources */,
+				A42E5E6028579868004F4E99 /* PlayerViewController.swift in Sources */,
 				8408935026D7E66B0064E851 /* GenreRequest.swift in Sources */,
 				A45FCDDC2710483100BF290F /* CreditRepository.swift in Sources */,
 				848EB6C626E069230069C536 /* SearchDataSourceDelegate.swift in Sources */,
